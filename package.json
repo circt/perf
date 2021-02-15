@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/circt/perf#readme",
   "dependencies": {
-    "circt-fuzzer": "^0.3.0"
+    "circt-fuzzer": "^0.4.0"
   }
 }
