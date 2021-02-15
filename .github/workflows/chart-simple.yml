@@ -20,3 +20,6 @@ jobs:
         run: node --version
       - name: version
         run: firtool --help
+      - name: install fuzzer
+        run: npm i
+
