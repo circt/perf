@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test1": "./bin/cli.js -m 20 -I 1000 -O 1000 -L true -z true --bundles false -n -o a_top_mod.fir fir"
   },
   "repository": {
     "type": "git",

@@ -16,11 +16,21 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: NPM?
-        run: npm --version
-      - run: node --version
       - name: install fuzzer
         run: npm i
-      - name: version
-        run: firtool --help
-
+      - name: test1
+        run: |
+          echo "firtool"
+          ./bin/cli.js \
+          -m 20 \
+          -I 1000 \
+          -O 1000 \
+          -L true \
+          -z true \
+          -n \
+          -o test1.fir fir
+          ./firtool \
+          test1.fir \
+          --lower-to-rtl \
+          --enable-lower-types \
+          --verilog -o=test1.v
