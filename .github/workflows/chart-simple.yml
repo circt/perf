@@ -1,0 +1,13 @@
+name: Perf charts
+
+jobs:
+  get-circt:
+    name: get circt
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/circt/images/circt:nightly
+    steps:
+      - name: ls
+        run: ls
+      - name: version
+        run: firtool --version
