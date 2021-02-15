@@ -1,0 +1,25 @@
+{
+  "name": "perf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/circt/perf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/circt/perf/issues"
+  },
+  "homepage": "https://github.com/circt/perf#readme",
+  "dependencies": {
+    "circt-fuzzer": "^0.3.0"
+  }
+}
