@@ -21,7 +21,7 @@ jobs:
       - name: test1
         run: |
           echo "firtool"
-          ./bin/cli.js \
+          ./node_modules/.bin/circt-fuzzer \
           -m 20 \
           -I 1000 \
           -O 1000 \
