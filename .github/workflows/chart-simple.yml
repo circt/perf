@@ -1,5 +1,5 @@
 name: Perf charts
-# Run on request and every day at 0300 PT
+# Run on request and every day at 0500 PDT
 on:
   workflow_dispatch:
   schedule:
@@ -24,6 +24,8 @@ jobs:
         run: firtool test1.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test1_new.v &> docs/`date +"%Y-%m-%d"`.log
       - name: Install rsync 📚
         run: apt-get update && apt-get install -y rsync
+      - name: ls docs
+        run: ls docs
       - name: publish log
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
