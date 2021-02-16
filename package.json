@@ -7,18 +7,38 @@
     "doc": "docs"
   },
   "scripts": {
+    "test": "eslint lib",
+    "build": "browserify ./lib/app.js > ./docs/app.js",
+    "watch": "watchify ./lib/app.js -o ./docs/app.js -v"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/circt/perf.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Aliaksei Chapyzhenka",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/circt/perf/issues"
   },
   "homepage": "https://github.com/circt/perf#readme",
+  "devDependencies": {
+    "@drom/eslint-config": "^0.10.0",
+    "browserify": "^16.5.2",
+    "chai": "^4.2.0",
+    "eslint": "^7.15.0",
+    "http-server": "^0.12.3",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "plotly.js-dist": "^1.58.4",
+    "watchify": "^3.11.1"
+  },
   "dependencies": {
     "circt-fuzzer": "^0.4.1"
+  },
+  "eslintConfig": {
+    "extends": "@drom/eslint-config/eslint4/node8",
+    "parserOptions": {
+      "ecmaVersion": 2020
+    }
   }
 }
