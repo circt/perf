@@ -16,17 +16,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: install firrtl
-        run: |
-          curl -fLo cs https://git.io/coursier-cli-"$(uname | tr LD ld)"
-          chmod +x cs
-          ./cs bootstrap edu.berkeley.cs::firrtl:1.5-SNAPSHOT -r sonatype:snapshots --main firrtl.stage.FirrtlMain -f -o firrtl-1.5-SNAPSHOT
       - name: install fuzzer
         run: npm i
       - name: generate test1.fir
         run: ./node_modules/.bin/circt-fuzzer fir -m 20 -I 1000 -O 1000 -L true -z true -n -o test1.fir
-      - name: compile with firrtl
-        run: ./firrtl-1.5-SNAPSHOT --dont-fold div -i a_top_mod.fir -o test1_old.v
       - name: compile with firtool
         run: ./firtool test1.fir --lower-to-rtl --enable-lower-types --verilog -o=test1_new.v
       - name: publish log
