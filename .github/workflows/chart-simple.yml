@@ -26,7 +26,7 @@ jobs:
         run: apt-get update && apt-get install -y rsync
       - name: ls docs
         run: ls docs
-      - name: publish log
+      - name: publish pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           branch: gh-pages
