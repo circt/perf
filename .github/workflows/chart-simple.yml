@@ -22,4 +22,6 @@ jobs:
         run: |
           echo "firtool"
           npm run gen-test1
+          ls
+          ./firtool test1.fir --lower-to-rtl --enable-lower-types --verilog -o=test1.v
           npm run fir-test1
