@@ -21,7 +21,7 @@ jobs:
       - name: generate test1.fir
         run: ./node_modules/.bin/circt-fuzzer fir -m 20 -I 1000 -O 1000 -L true -z true -n -o test1.fir
       - name: firtool
-        run: firtool test1.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test1_new.v &> docs/`date +"%Y-%m-%d-%H-%M"`.log
+        run: firtool test1.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test1_new.v &> docs/`date +"%Y-%m-%d"`.log
       - name: publish log
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
