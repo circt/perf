@@ -21,7 +21,7 @@ jobs:
       - name: generate test1.fir
         run: ./node_modules/.bin/circt-fuzzer fir -s 42 -m 50 -I 1000 -O 5000 -L true -z true -n -o test1.fir
       - name: firtool
-        run: firtool test1.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test1_new.v &> docs/`date +"%Y-%m-%d"`.log
+        run: firtool test1.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test1_new.v > docs/`date +"%Y-%m-%d"`.log
       - name: Install rsync 📚
         run: apt-get update && apt-get install -y rsync
       - name: ls docs
