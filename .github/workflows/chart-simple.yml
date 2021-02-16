@@ -29,5 +29,5 @@ jobs:
       - name: publish log
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
-          branch: trunk
+          branch: gh-pages
           folder: docs
