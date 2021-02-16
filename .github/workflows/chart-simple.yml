@@ -20,11 +20,10 @@ jobs:
         run: npm i
       - name: generate test1.fir
         run: ./node_modules/.bin/circt-fuzzer fir -m 20 -I 1000 -O 1000 -L true -z true -n -o test1.fir
-      - name: ls .
-        run: ls .
-      - name: ls ..
-        run: ls ..
-      - name: compile with firtool
-        run: firtool test1.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test1_new.v
+      - name: firtool
+        run: firtool test1.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test1_new.v &> docs/`date +"%Y-%m-%d-%H-%M"`.log
       - name: publish log
-        run: ls
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: trunk
+          folder: docs
