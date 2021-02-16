@@ -20,7 +20,7 @@ jobs:
         run: |
           curl -fLo cs https://git.io/coursier-cli-"$(uname | tr LD ld)"
           chmod +x cs
-          ./cs bootstrap edu.berkeley.cs::firrtl:1.5-SNAPSHOT -r sonatype:snapshots --main firrtl.stage.FirrtlMain -f -o Crrtl-1.5-SNAPSHOT
+          ./cs bootstrap edu.berkeley.cs::firrtl:1.5-SNAPSHOT -r sonatype:snapshots --main firrtl.stage.FirrtlMain -f -o firrtl-1.5-SNAPSHOT
       - name: install fuzzer
         run: npm i
       - name: test1
