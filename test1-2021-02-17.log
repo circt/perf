@@ -1,20 +1,20 @@
 ===-------------------------------------------------------------------------===
                       ... Pass execution timing report ...
 ===-------------------------------------------------------------------------===
-  Total Execution Time: 20.9523 seconds
+  Total Execution Time: 22.1309 seconds
 
    ---User Time---   ---Wall Time---  --- Name ---
-   0.1270 (  0.6%)     0.1270 (  0.6%)  CSE
-   0.0026 (  0.0%)     0.0026 (  0.0%)    (A) DominanceInfo
-   1.0331 (  4.8%)     1.0331 (  4.9%)  Canonicalizer
-  17.0158 ( 79.3%)    17.0158 ( 81.2%)  'firrtl.circuit' Pipeline
-  17.0158 ( 79.3%)    17.0158 ( 81.2%)    'firrtl.module' Pipeline
-  17.0158 ( 79.3%)    17.0158 ( 81.2%)      LowerFIRRTLTypes
-   0.1392 (  0.6%)     0.1392 (  0.7%)  LowerFIRRTLToRTLModule
-   1.1234 (  5.2%)     0.6286 (  3.0%)  'rtl.module' Pipeline
-   0.8565 (  4.0%)     0.4718 (  2.3%)    LowerFIRRTLToRTL
-   0.2669 (  1.2%)     0.1568 (  0.7%)    AlwaysFusion
-   0.5336 (  2.5%)     0.5336 (  2.5%)  CSE
-   0.0807 (  0.4%)     0.0807 (  0.4%)    (A) DominanceInfo
-   1.4750 (  6.9%)     1.4750 (  7.0%)  Canonicalizer
-  21.4471 (100.0%)    20.9523 (100.0%)  Total
+   0.1440 (  0.6%)     0.1440 (  0.7%)  CSE
+   0.0033 (  0.0%)     0.0033 (  0.0%)    (A) DominanceInfo
+   1.1019 (  4.9%)     1.1019 (  5.0%)  Canonicalizer
+  17.9105 ( 78.9%)    17.9105 ( 80.9%)  'firrtl.circuit' Pipeline
+  17.9105 ( 78.9%)    17.9105 ( 80.9%)    'firrtl.module' Pipeline
+  17.9105 ( 78.9%)    17.9105 ( 80.9%)      LowerFIRRTLTypes
+   0.1545 (  0.7%)     0.1545 (  0.7%)  LowerFIRRTLToRTLModule
+   1.2550 (  5.5%)     0.6790 (  3.1%)  'rtl.module' Pipeline
+   0.9215 (  4.1%)     0.4689 (  2.1%)    LowerFIRRTLToRTL
+   0.3335 (  1.5%)     0.2102 (  0.9%)    AlwaysFusion
+   0.5383 (  2.4%)     0.5383 (  2.4%)  CSE
+   0.0759 (  0.3%)     0.0759 (  0.3%)    (A) DominanceInfo
+   1.6026 (  7.1%)     1.6026 (  7.2%)  Canonicalizer
+  22.7069 (100.0%)    22.1309 (100.0%)  Total
