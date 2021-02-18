@@ -46,7 +46,7 @@ const main = async () => {
       firtool.on('exit', () => {
         clearInterval(timer);
         console.log({
-          totalTime: Date.now() - t0,
+          totalTime: (Date.now() - t0) / 1000,
           maxMemory: maxs.memory
         });
       });
