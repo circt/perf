@@ -18,14 +18,12 @@ jobs:
           node-version: '14'
       - name: install fuzzer
         run: npm i
-      - name: generate test1.fir
-        run: ./node_modules/.bin/circt-fuzzer fir -s 42 -m 50 -I 1000 -O 20000 --bundles true -L true -z true -n -o test1.fir
+      - name: copt test1
+        run: cp regress/test1.fir .
       - name: firtool
         run: ./bin/run-firtool.js > docs/test1-`date +"%Y-%m-%d"`.log
       - name: linter
         run: verilator --top-module top_mod --lint-only test1_new.v || true
-      - name: build web app
-        run: npm run build
       - name: Install rsync 📚
         run: apt-get update && apt-get install -y rsync
       - name: publish pages 🚀
