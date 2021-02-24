@@ -18,9 +18,7 @@ jobs:
           node-version: '14'
       - name: install fuzzer
         run: npm i
-      - name: copt test1
-        run: cp regress/test1.fir .
-      - name: firtool
+      - name: run firtool
         run: ./bin/run-firtool.js
       - name: linter
         run: verilator --top-module top_mod --lint-only test1_new.v || true
