@@ -13,7 +13,7 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -22,8 +22,6 @@ jobs:
       run: |
         npm i
         npm run build
-    - name: Install rsync 📚
-      run: apt-get update && apt-get install -y rsync
     - name: publish pages 🚀
       uses: JamesIves/github-pages-deploy-action@4.0.0
       with:
