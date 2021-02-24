@@ -18,6 +18,8 @@ jobs:
           node-version: '14'
       - name: install fuzzer
         run: npm i
+      - name: which firtool
+        run: which firtool
       - name: run firtool
         run: ./bin/run-firtool.js
       - name: linter
