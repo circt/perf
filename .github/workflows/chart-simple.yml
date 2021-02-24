@@ -20,6 +20,8 @@ jobs:
         run: npm i
       - name: which firtool
         run: which firtool
+      - name: firtool --version
+        run: firtool --version
       - name: run firtool
         run: ./bin/run-firtool.js
       - name: linter
