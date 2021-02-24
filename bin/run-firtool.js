@@ -37,7 +37,7 @@ const main = async () => {
         '--enable-lower-types',
         '--pass-timing',
         '--verilog',
-        '-o=' + (test + '.v')
+        '-o=' + (test + '_new.v')
       ]);
 
       let timer, maxs = {memory: 0};
