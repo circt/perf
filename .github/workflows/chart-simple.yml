@@ -21,7 +21,7 @@ jobs:
       - name: copt test1
         run: cp regress/test1.fir .
       - name: firtool
-        run: ./bin/run-firtool.js > docs/test1-`date +"%Y-%m-%d"`.log
+        run: ./bin/run-firtool.js
       - name: linter
         run: verilator --top-module top_mod --lint-only test1_new.v || true
       - name: Install rsync 📚

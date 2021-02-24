@@ -2,12 +2,29 @@
 'use strict';
 
 const cp = require('child_process');
+const { appendFile, writeFile } = require('fs/promises');
+
 const pidusage = require('pidusage');
 
-// const firtoolExec = '../../llvm/circt/build/bin/firtool';
-const firtoolExec = 'firtool';
+const dateString = dat => [
+  dat.getUTCFullYear(),
+  (dat.getUTCMonth() + 1 + '').padStart(2, '0'),
+  (dat.getUTCDate() + '').padStart(2, '0')
+].join('-');
 
-const tests = ['test1'];
+const firtoolExec = (
+  // '../../llvm/circt/build/bin/' + // local development version
+  'firtool'
+);
+
+const tests = [
+  // 'regress/HwachaSequencer.lo',
+  // 'regress/RocketCore.lo',
+  // 'regress/FPU.lo',
+  // 'regress/Rob.lo',
+  // 'regress/test0',
+  'test1'
+];
 
 const main = async () => {
 
@@ -15,7 +32,7 @@ const main = async () => {
     try {
       const t0 = Date.now();
       const firtool = await cp.spawn(firtoolExec, [
-        (test + '.fir'),
+        ('regress/' + test + '.fir'),
         '--lower-to-rtl',
         '--enable-lower-types',
         '--pass-timing',
@@ -35,20 +52,25 @@ const main = async () => {
       };
       interval(200);
 
-      for await (const err of firtool.stderr) {
-        console.log(err.toString());
+      const logName = 'docs/' + test + '-' + dateString(new Date()) + '.log';
+
+      for await (const log of firtool.stderr) {
+        await writeFile(logName, log.toString());
       }
 
-      for await (const out of firtool.stdout) {
-        console.log(out.toString());
+      for await (const log of firtool.stdout) {
+        await writeFile(logName, log.toString());
       }
 
-      firtool.on('exit', () => {
+      firtool.on('exit', async () => {
         clearInterval(timer);
-        console.log({
-          totalTime: (Date.now() - t0) / 1000,
-          maxMemory: maxs.memory
-        });
+        await appendFile(logName, `
+{
+  totalTime: ${(Date.now() - t0) / 1000},
+  maxMemory: ${maxs.memory}
+}
+`
+        );
       });
 
     } catch (err) {
@@ -58,5 +80,3 @@ const main = async () => {
 };
 
 main();
-
-// -Xms1500m -Xmx1500m
