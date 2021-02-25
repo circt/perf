@@ -1,25 +1,25 @@
 ===-------------------------------------------------------------------------===
                       ... Pass execution timing report ...
 ===-------------------------------------------------------------------------===
-  Total Execution Time: 22.2071 seconds
+  Total Execution Time: 18.1911 seconds
 
    ---User Time---   ---Wall Time---  --- Name ---
-   0.1515 (  0.6%)     0.1515 (  0.7%)  CSE
-   0.0025 (  0.0%)     0.0025 (  0.0%)    (A) DominanceInfo
-   1.2827 (  4.7%)     1.2827 (  5.8%)  Canonicalizer
-  13.2232 ( 48.4%)    13.2232 ( 59.5%)  'firrtl.circuit' Pipeline
-  13.2232 ( 48.4%)    13.2232 ( 59.5%)    'firrtl.module' Pipeline
-  13.2232 ( 48.4%)    13.2232 ( 59.5%)      LowerFIRRTLTypes
-   0.1905 (  0.7%)     0.1905 (  0.9%)  LowerFIRRTLToRTLModule
-  10.6031 ( 38.8%)     5.5138 ( 24.8%)  'rtl.module' Pipeline
-   1.1304 (  4.1%)     0.6360 (  2.9%)    LowerFIRRTLToRTL
-   9.4726 ( 34.7%)     4.8778 ( 22.0%)    RTLCleanup
-   0.4388 (  1.6%)     0.4388 (  2.0%)  CSE
-   0.0516 (  0.2%)     0.0516 (  0.2%)    (A) DominanceInfo
-   1.4065 (  5.2%)     1.4065 (  6.3%)  Canonicalizer
-  27.2964 (100.0%)    22.2071 (100.0%)  Total
+   0.1423 (  0.6%)     0.1423 (  0.8%)  CSE
+   0.0028 (  0.0%)     0.0028 (  0.0%)    (A) DominanceInfo
+   0.9982 (  4.5%)     0.9982 (  5.5%)  Canonicalizer
+  10.9349 ( 49.0%)    10.9349 ( 60.1%)  'firrtl.circuit' Pipeline
+  10.9349 ( 49.0%)    10.9349 ( 60.1%)    'firrtl.module' Pipeline
+  10.9349 ( 49.0%)    10.9349 ( 60.1%)      LowerFIRRTLTypes
+   0.1350 (  0.6%)     0.1350 (  0.7%)  LowerFIRRTLToRTLModule
+   8.4517 ( 37.9%)     4.3494 ( 23.9%)  'rtl.module' Pipeline
+   0.9075 (  4.1%)     0.4638 (  2.5%)    LowerFIRRTLToRTL
+   7.5443 ( 33.8%)     3.8856 ( 21.4%)    RTLCleanup
+   0.3683 (  1.7%)     0.3683 (  2.0%)  CSE
+   0.0438 (  0.2%)     0.0438 (  0.2%)    (A) DominanceInfo
+   1.2631 (  5.7%)     1.2631 (  6.9%)  Canonicalizer
+  22.2935 (100.0%)    18.1911 (100.0%)  Total
 
 {
-  totalTime: 23.541,
-  maxMemory: 3303137280
+  totalTime: 19.407,
+  maxMemory: 3317002240
 }
