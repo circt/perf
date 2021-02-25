@@ -1,1 +1,25 @@
-firtool: error while loading shared libraries: libMLIRTransforms.so.13git: cannot open shared object file: No such file or directory
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 15.9008 seconds
+
+   ---User Time---   ---Wall Time---  --- Name ---
+   0.1294 (  0.7%)     0.1294 (  0.8%)  CSE
+   0.0029 (  0.0%)     0.0029 (  0.0%)    (A) DominanceInfo
+   1.0290 (  5.6%)     1.0290 (  6.5%)  Canonicalizer
+   9.9642 ( 54.1%)     9.9642 ( 62.7%)  'firrtl.circuit' Pipeline
+   9.9642 ( 54.1%)     9.9642 ( 62.7%)    'firrtl.module' Pipeline
+   9.9642 ( 54.1%)     9.9642 ( 62.7%)      LowerFIRRTLTypes
+   0.1425 (  0.8%)     0.1425 (  0.9%)  LowerFIRRTLToRTLModule
+   5.6759 ( 30.8%)     3.1719 ( 19.9%)  'rtl.module' Pipeline
+   0.8112 (  4.4%)     0.4214 (  2.7%)    LowerFIRRTLToRTL
+   4.8647 ( 26.4%)     2.7505 ( 17.3%)    RTLCleanup
+   0.3670 (  2.0%)     0.3670 (  2.3%)  CSE
+   0.0429 (  0.2%)     0.0429 (  0.3%)    (A) DominanceInfo
+   1.0968 (  6.0%)     1.0968 (  6.9%)  Canonicalizer
+  18.4048 (100.0%)    15.9008 (100.0%)  Total
+
+{
+  totalTime: 17.041,
+  maxMemory: 3316854784
+}
