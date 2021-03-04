@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: install fuzzer
+      - name: Install NPM Dependencies
         run: npm i
       - name: which firtool
         run: which firtool

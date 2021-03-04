@@ -33,7 +33,6 @@
     "watchify": "^3.11.1"
   },
   "dependencies": {
-    "circt-fuzzer": "^0.4.1",
     "pidusage": "^2.0.21"
   },
   "eslintConfig": {
