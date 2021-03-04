@@ -6,16 +6,12 @@ const { appendFile, writeFile } = require('fs/promises');
 
 const pidusage = require('pidusage');
 
-const dateString = dat => [
-  dat.getUTCFullYear(),
-  (dat.getUTCMonth() + 1 + '').padStart(2, '0'),
-  (dat.getUTCDate() + '').padStart(2, '0')
-].join('-');
+const dateString = require('../lib/date-string.js');
 
-const firtoolExec = (
-  // '../../llvm/circt/build/bin/' + // local development version
+const firtoolExec = [
+  // '../../llvm/circt/build/bin', // local development version
   'firtool'
-);
+].join('/');
 
 const tests = [
   // 'regress/HwachaSequencer.lo',
@@ -27,7 +23,6 @@ const tests = [
 ];
 
 const main = async () => {
-
   for (let test of tests) {
     try {
       const t0 = Date.now();
