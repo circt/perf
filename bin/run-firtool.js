@@ -22,8 +22,56 @@ const tests = [
   // 'FPU.lo',
   // 'Rob.lo',
   // 'test0',
-  'test1'
+  'test1',
+  'test2'
 ];
+
+const count = (obj, key, delta) => {
+  if (obj[key] === undefined) {
+    obj[key] = 0;
+  }
+  obj[key] += delta;
+};
+
+const vlint = txt => {
+  const errors = {};
+  const warnings = {};
+  txt.split('\n').map(line => {
+    const m1 = line.match(/^%Error.+:.+:.+:\s*(.+)/);
+    if (m1) {
+      count(errors, m1[1], 1);
+      return;
+    }
+    const m2 = line.match(/^%Warning-(\w+):/);
+    if (m2) {
+      count(warnings, m2[1], 1);
+      return;
+    }
+  });
+  return {errors, warnings};
+};
+
+const verialtor = async name => {
+  console.log('  verilator');
+  try {
+    const child = await cp.spawn('verilator', [
+      '--error-limit', '5000',
+      '--lint-only',
+      name + '.v'
+    ]);
+
+    let log = '';
+
+    for await (const err of child.stderr) { log += err.toString(); }
+    for await (const out of child.stdout) { log += out.toString(); }
+    await new Promise(resolve => { child.on('exit', resolve); });
+
+    const logName = 'docs/' + name + '-vlint-' + dateString(new Date()) + '.json';
+    await writeFile(logName, JSON.stringify(vlint(log), null, 2));
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const unpack = async name => {
   // unpack the file if it is compressed
@@ -75,18 +123,9 @@ const firtool = async name => {
     interval(200);
 
     const logName = 'docs/' + name + '-' + dateString(new Date()) + '.log';
-
-    for await (const log of firtool.stderr) {
-      await writeFile(logName, log.toString());
-    }
-
-    for await (const log of firtool.stdout) {
-      await writeFile(logName, log.toString());
-    }
-
-    await new Promise(resolve => {
-      firtool.on('exit', resolve);
-    });
+    for await (const log of firtool.stderr) { await writeFile(logName, log.toString()); }
+    for await (const log of firtool.stdout) { await writeFile(logName, log.toString()); }
+    await new Promise(resolve => { firtool.on('exit', resolve); });
 
     clearInterval(timer);
 
@@ -104,9 +143,10 @@ const firtool = async name => {
 
 const main = async () => {
   for (let test of tests) {
+    console.log(test);
     await unpack(testPath + '/' + test + '.fir');
     await firtool(test);
-    // await verialtor(test);
+    await verialtor(test);
   }
 };
 
