@@ -1,0 +1,8 @@
+{
+  "errors": {},
+  "warnings": {
+    "MULTITOP": 1,
+    "UNSIGNED": 29,
+    "CMPCONST": 11
+  }
+}
