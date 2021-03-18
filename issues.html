@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Issues</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+    <script type="module">
+      import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+
+      const getKey = date => {
+        const time = new Date(date).getTime();
+        const key = Math.ceil(time / (7 * 24 * 60 * 60 * 1000));
+        return key;
+      }
+
+      const getBatched = (arr, prop) => arr.reduce((res, e) => {
+        if (e[prop]) {
+          const key = getKey(e[prop]);
+          if (res[key] === undefined) {
+            res[key] = [];
+          }
+          res[key].push(e);
+        }
+        return res;
+      }, {});
+
+      const MAIN = async divName => {
+        const octokit = new Octokit();
+        let issues = [];
+
+        for (let i = 1; i < 100; i++) {
+          const resp = await octokit.request('GET /repos/llvm/circt/issues', {
+            state: 'all',
+            per_page: 100,
+            page: i
+          });
+          if (resp.status !== 200) {
+            return;
+          }
+          const issuesPage = resp.data;
+          console.log('page: ' + i + ', issues: ' + issuesPage.length);
+          issues = issues.concat(issuesPage);
+          if (issuesPage.length < 100) {
+            break;
+          }
+        }
+
+        let dMin = 99999;
+        let dMax = 0
+
+        const createdPerWeek = getBatched(issues, 'created_at');
+        const plotData1 = Object.keys(createdPerWeek).reduce((res, key, len) => {
+          dMin = Math.min(dMin, key);
+          dMax = Math.max(dMax, key);
+          res.x.push(key);
+          res.y.push(createdPerWeek[key].length);
+          return res;
+        }, {x: [], y: [], type: 'bar', name: 'created'});
+
+        const closedPerWeek = getBatched(issues, 'closed_at');
+        const plotData2 = Object.keys(closedPerWeek).reduce((res, key, len) => {
+          dMin = Math.min(dMin, key);
+          dMax = Math.max(dMax, key);
+          res.x.push(key);
+          res.y.push(-closedPerWeek[key].length);
+          return res;
+        }, {x: [], y: [], type: 'bar', name: 'closed'});
+
+        const totalOpen = {};
+        let total = 0;
+        for (let key = dMin; key <= dMax; key++) {
+          total += createdPerWeek[key] ? createdPerWeek[key].length : 0;
+          total -= closedPerWeek[key] ? closedPerWeek[key].length : 0;
+          totalOpen[key] = total;
+        }
+        console.log(totalOpen);
+        const plotData3 = Object.keys(totalOpen).reduce((res, key, len) => {
+          res.x.push(key);
+          res.y.push(totalOpen[key]);
+          return res;
+        }, {x: [], y: [], type: 'line', name: 'total open'});
+
+        const plotDiv = document.getElementById(divName);
+        Plotly.plot(plotDiv,
+          [plotData1, plotData2, plotData3],
+          {
+            legend: {x: 0.1}
+          }
+        );
+      };
+      MAIN('view42');
+    </script>
+  </head>
+  <body>
+    <h1>CIRCT Issues Weekly<a href="https://github.com/llvm/circt">https://github.com/llvm/circt</a></h1>
+    <div class="container" id="view42"></div>
+  </body>
+</html>
