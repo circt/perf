@@ -11,8 +11,14 @@
 
       const getKey = date => {
         const time = new Date(date).getTime();
-        const key = Math.ceil(time / (7 * 24 * 60 * 60 * 1000));
+        const key = Math.floor(time / (7 * 24 * 60 * 60 * 1000));
         return key;
+      }
+
+      const key2week = key => {
+        const time = key * (7 * 24 * 60 * 60 * 1000);
+        const date = new Date(time);
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
       }
 
       const getBatched = (arr, prop) => arr.reduce((res, e) => {
@@ -54,7 +60,7 @@
         const plotData1 = Object.keys(createdPerWeek).reduce((res, key, len) => {
           dMin = Math.min(dMin, key);
           dMax = Math.max(dMax, key);
-          res.x.push(key);
+          res.x.push(key2week(key));
           res.y.push(createdPerWeek[key].length);
           return res;
         }, {x: [], y: [], type: 'bar', name: 'created'});
@@ -63,7 +69,7 @@
         const plotData2 = Object.keys(closedPerWeek).reduce((res, key, len) => {
           dMin = Math.min(dMin, key);
           dMax = Math.max(dMax, key);
-          res.x.push(key);
+          res.x.push(key2week(key));
           res.y.push(-closedPerWeek[key].length);
           return res;
         }, {x: [], y: [], type: 'bar', name: 'closed'});
@@ -77,11 +83,11 @@
         }
         console.log(totalOpen);
         const plotData3 = Object.keys(totalOpen).reduce((res, key, len) => {
-          res.x.push(key);
+          res.x.push(key2week(key));
           res.y.push(totalOpen[key]);
           return res;
         }, {x: [], y: [], type: 'line', name: 'total open'});
-
+        console.log(plotData1, plotData2, plotData3);
         const plotDiv = document.getElementById(divName);
         Plotly.plot(plotDiv,
           [plotData1, plotData2, plotData3],
