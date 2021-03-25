@@ -8,6 +8,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
     <script type="module">
       import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+      const octokit = new Octokit();
 
       const getKey = date => {
         const time = new Date(date).getTime();
@@ -32,12 +33,11 @@
         return res;
       }, {});
 
-      const MAIN = async divName => {
-        const octokit = new Octokit();
+      // fetch all issues from github
+      const fetchIssues = async (org, proj) => {
         let issues = [];
-
         for (let i = 1; i < 100; i++) {
-          const resp = await octokit.request('GET /repos/llvm/circt/issues', {
+          const resp = await octokit.request('GET /repos/' + org + '/' + proj + '/issues', {
             state: 'all',
             per_page: 100,
             page: i
@@ -52,7 +52,11 @@
             break;
           }
         }
+        // console.log(issues.map(e => e.milestone  && e.milestone.title));
+        return issues;
+      };
 
+      const plotIssues = async (rootDiv, issues, title) => {
         let dMin = 99999;
         let dMax = 0
 
@@ -81,20 +85,33 @@
           total -= closedPerWeek[key] ? closedPerWeek[key].length : 0;
           totalOpen[key] = total;
         }
-        console.log(totalOpen);
+        // console.log(totalOpen);
         const plotData3 = Object.keys(totalOpen).reduce((res, key, len) => {
           res.x.push(key2week(key));
           res.y.push(totalOpen[key]);
           return res;
         }, {x: [], y: [], type: 'line', name: 'total open'});
-        console.log(plotData1, plotData2, plotData3);
-        const plotDiv = document.getElementById(divName);
+        // console.log(plotData1, plotData2, plotData3);
+
+        const plotDiv = document.createElement('div');
+        rootDiv.append(plotDiv);
         Plotly.plot(plotDiv,
           [plotData1, plotData2, plotData3],
           {
-            legend: {x: 0.1}
+            legend: {x: 0.1},
+            title
           }
         );
+      }
+
+      const MAIN = async divName => {
+        const rootDiv = document.getElementById(divName);
+        const issues = await fetchIssues('llvm', 'circt');
+        await plotIssues(rootDiv, issues, 'All issues');
+        const issuesM1 = issues.filter(e => e.milestone && (e.milestone.title === 'SiFive-1'));
+        await plotIssues(rootDiv, issuesM1, 'SiFive-1');
+        const issuesM2 = issues.filter(e => e.milestone && (e.milestone.title === 'SiFive-2'));
+        await plotIssues(rootDiv, issuesM2, 'SiFive-2');
       };
       MAIN('view42');
     </script>
