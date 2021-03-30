@@ -1,0 +1,40 @@
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/test2.fir --lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test2.v
+1.	2.	Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x48e03)[0x55989a49de03]
+firtool(+0x46bbe)[0x55989a49bbbe]
+firtool(+0x4943f)[0x55989a49e43f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f62ac5d13c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f62ac09518b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f62ac074859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7f62ac074729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7f62ac085f36]
+firtool(+0x1ace2b)[0x55989a601e2b]
+firtool(+0x1b11ec)[0x55989a6061ec]
+firtool(+0x1a5a94)[0x55989a5faa94]
+firtool(+0x171b5d)[0x55989a5c6b5d]
+firtool(+0x208382)[0x55989a65d382]
+firtool(+0x2078c4)[0x55989a65c8c4]
+firtool(+0x1fd6f4)[0x55989a6526f4]
+firtool(+0x2ff462)[0x55989a754462]
+firtool(+0x2ff9c3)[0x55989a7549c3]
+firtool(+0x3059b2)[0x55989a75a9b2]
+firtool(+0x30579e)[0x55989a75a79e]
+firtool(+0x30078c)[0x55989a75578c]
+firtool(+0x2ff55d)[0x55989a75455d]
+firtool(+0x2ff9c3)[0x55989a7549c3]
+firtool(+0x3059b2)[0x55989a75a9b2]
+firtool(+0x30579e)[0x55989a75a79e]
+firtool(+0x30078c)[0x55989a75578c]
+firtool(+0x2ff55d)[0x55989a75455d]
+firtool(+0x302398)[0x55989a757398]
+firtool(+0x19b83)[0x55989a46eb83]
+firtool(+0x14f59)[0x55989a469f59]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f62ac0760b3]
+firtool(+0x16e0e)[0x55989a46be0e]
+
+{
+  totalTime: 8.539,
+  maxMemory: 435638272
+}
