@@ -1,0 +1,38 @@
+-lower-to-rtl --enable-lower-types --pass-timing --verilog -o=test2.v
+1.	2.	Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x48e03)[0x556c352aee03]
+firtool(+0x46bbe)[0x556c352acbbe]
+firtool(+0x4943f)[0x556c352af43f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7faef100e3c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7faef0ad218b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7faef0ab1859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7faef0ab1729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7faef0ac2f36]
+firtool(+0x1ace2b)[0x556c35412e2b]
+firtool(+0x1b11ec)[0x556c354171ec]
+firtool(+0x1a5a94)[0x556c3540ba94]
+firtool(+0x171b5d)[0x556c353d7b5d]
+firtool(+0x208382)[0x556c3546e382]
+firtool(+0x2078c4)[0x556c3546d8c4]
+firtool(+0x1fd6f4)[0x556c354636f4]
+firtool(+0x2ff462)[0x556c35565462]
+firtool(+0x2ff9c3)[0x556c355659c3]
+firtool(+0x3059b2)[0x556c3556b9b2]
+firtool(+0x30579e)[0x556c3556b79e]
+firtool(+0x30078c)[0x556c3556678c]
+firtool(+0x2ff55d)[0x556c3556555d]
+firtool(+0x2ff9c3)[0x556c355659c3]
+firtool(+0x3059b2)[0x556c3556b9b2]
+firtool(+0x30579e)[0x556c3556b79e]
+firtool(+0x30078c)[0x556c3556678c]
+firtool(+0x2ff55d)[0x556c3556555d]
+firtool(+0x302398)[0x556c35568398]
+firtool(+0x19b83)[0x556c3527fb83]
+firtool(+0x14f59)[0x556c3527af59]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7faef0ab30b3]
+firtool(+0x16e0e)[0x556c3527ce0e]
+
+{
+  totalTime: 7.567,
+  maxMemory: 436088832
+}
