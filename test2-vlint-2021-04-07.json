@@ -1,0 +1,7 @@
+{
+  "errors": {},
+  "warnings": {
+    "UNSIGNED": 1,
+    "CMPCONST": 2
+  }
+}
