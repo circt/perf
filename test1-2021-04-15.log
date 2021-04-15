@@ -1,0 +1,4 @@
+firtool: Unknown command line argument '--lower-types'.  Try: 'firtool --help'
+firtool: Did you mean '--lower-to-rtl'?
+firtool: Unknown command line argument '--lowering-options=noAlwaysFF'.  Try: 'firtool --help'
+firtool: Did you mean '--print-options=noAlwaysFF'?
