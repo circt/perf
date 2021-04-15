@@ -1,4 +1,27 @@
-firtool: Unknown command line argument '--lower-types'.  Try: 'firtool --help'
-firtool: Did you mean '--lower-to-rtl'?
-firtool: Unknown command line argument '--lowering-options=noAlwaysFF'.  Try: 'firtool --help'
-firtool: Did you mean '--print-options=noAlwaysFF'?
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 2.9255 seconds
+
+   ---User Time---   ---Wall Time---  --- Name ---
+   1.9096 ( 55.9%)     1.9096 ( 65.3%)  'firrtl.circuit' Pipeline
+   1.2473 ( 36.5%)     1.2473 ( 42.6%)    LowerFIRRTLTypes
+   0.6623 ( 19.4%)     0.6623 ( 22.6%)    'firrtl.module' Pipeline
+   0.1080 (  3.2%)     0.1080 (  3.7%)      CSE
+   0.0030 (  0.1%)     0.0030 (  0.1%)        (A) DominanceInfo
+   0.5544 ( 16.2%)     0.5544 ( 18.9%)      Canonicalizer
+   0.2601 (  7.6%)     0.2601 (  8.9%)  LowerFIRRTLToRTL
+   0.0855 (  2.5%)     0.0855 (  2.9%)  RTLMemSimImpl
+   1.0360 ( 30.3%)     0.5464 ( 18.7%)  'rtl.module' Pipeline
+   0.0769 (  2.3%)     0.0462 (  1.6%)    RTLCleanup
+   0.2197 (  6.4%)     0.1153 (  3.9%)    CSE
+   0.0075 (  0.2%)     0.0049 (  0.2%)      (A) DominanceInfo
+   0.7394 ( 21.7%)     0.3848 ( 13.2%)    Canonicalizer
+   0.1239 (  3.6%)     0.1239 (  4.2%)  RTLLegalizeNames
+   0.0157 (  0.5%)     0.0157 (  0.5%)    (A) circt::sv::LegalNamesAnalysis
+   3.4151 (100.0%)     2.9255 (100.0%)  Total
+
+{
+  totalTime: 3.781,
+  maxMemory: 106504192
+}
