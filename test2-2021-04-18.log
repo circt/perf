@@ -1,0 +1,27 @@
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 164.1897 seconds
+
+   ---Wall Time---  --- Name ---
+  12.4615 (  7.6%)  'firrtl.circuit' Pipeline
+   2.5932 (  1.6%)    LowerFIRRTLTypes
+   9.8683 (  6.0%)    'firrtl.module' Pipeline
+   1.3761 (  0.8%)      CSE
+   0.0246 (  0.0%)        (A) DominanceInfo
+   8.4922 (  5.2%)      Canonicalizer
+   3.8992 (  2.4%)  LowerFIRRTLToRTL
+   1.3940 (  0.8%)  RTLMemSimImpl
+  144.6776 ( 88.1%)  'rtl.module' Pipeline
+   1.2637 (  0.8%)    RTLCleanup
+   2.5617 (  1.6%)    CSE
+   0.2466 (  0.2%)      (A) DominanceInfo
+  140.8523 ( 85.8%)    Canonicalizer
+   1.7575 (  1.1%)  RTLLegalizeNames
+   0.1842 (  0.1%)    (A) circt::sv::LegalNamesAnalysis
+  164.1897 (100.0%)  Total
+
+{
+  totalTime: 173.432,
+  maxMemory: 824971264
+}
