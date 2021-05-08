@@ -1,0 +1,28 @@
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 146.2774 seconds
+
+   ---Wall Time---  --- Name ---
+   7.2187 (  4.9%)  'firrtl.circuit' Pipeline
+   0.7193 (  0.5%)    LowerFIRRTLTypes
+   6.4994 (  4.4%)    'firrtl.module' Pipeline
+   1.2123 (  0.8%)      CSE
+   0.0226 (  0.0%)        (A) DominanceInfo
+   5.2872 (  3.6%)      SimpleCanonicalizer
+   3.5501 (  2.4%)  LowerFIRRTLToRTL
+   1.3732 (  0.9%)  RTLMemSimImpl
+  131.7136 ( 90.0%)  'rtl.module' Pipeline
+   1.1879 (  0.8%)    RTLCleanup
+   2.5212 (  1.7%)    CSE
+   0.2893 (  0.2%)      (A) DominanceInfo
+  128.0046 ( 87.5%)    SimpleCanonicalizer
+   1.4282 (  1.0%)  RTLLegalizeNames
+   0.9935 (  0.7%)  'rtl.module' Pipeline
+   0.9935 (  0.7%)    PrettifyVerilog
+  146.2774 (100.0%)  Total
+
+{
+  totalTime: 156.008,
+  maxMemory: 785031168
+}
