@@ -2,7 +2,7 @@
 'use strict';
 
 const cp = require('child_process');
-const { appendFile, writeFile } = require('fs/promises');
+const { writeFile } = require('fs/promises');
 const { existsSync } = require('fs');
 
 const pidusage = require('pidusage');
@@ -97,6 +97,7 @@ const unpack = async name => {
 };
 
 const firtool = async name => {
+  console.log('  firtool');
   try {
     const t0 = Date.now();
     const child = await cp.spawn(firtoolExec, [
