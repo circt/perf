@@ -1,0 +1,2 @@
+firtool: Unknown command line argument '--pass-timing'.  Try: 'firtool --help'
+firtool: Did you mean '--mlir-timing'?
