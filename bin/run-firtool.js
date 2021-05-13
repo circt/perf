@@ -104,7 +104,7 @@ const firtool = async name => {
       '--lower-to-rtl',
       '--lower-types',
       '--lowering-options=noAlwaysFF',
-      '--pass-timing',
+      '--mlir-timing',
       '--verilog',
       '-o=' + (name + '.v')
     ]);
