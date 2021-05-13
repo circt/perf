@@ -1,10 +1,4 @@
-
-    1.1118 (  0.5%)    PrettifyVerilog
-    3.1242 (  1.5%)  Output
-    0.0218 (  0.0%)  Rest
-  207.7578 (100.0%)  Total
-
 {
-  totalTime: 207.789,
-  maxMemory: 780763136
+  "errors": {},
+  "warnings": {}
 }

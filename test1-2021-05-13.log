@@ -1,19 +1,4 @@
-    0.0263 (  0.8%)      CheckWidths
-    0.2698 (  6.6%)    0.2698 (  8.2%)  LowerFIRRTLToRTL
-    0.1001 (  2.4%)    0.1001 (  3.0%)  RTLMemSimImpl
-    0.9172 ( 22.4%)    0.4630 ( 14.0%)  'rtl.module' Pipeline
-    0.0832 (  2.0%)    0.0498 (  1.5%)    RTLCleanup
-    0.2226 (  5.4%)    0.1169 (  3.5%)    CSE
-    0.0083 (  0.2%)    0.0051 (  0.2%)      (A) DominanceInfo
-    0.6114 ( 15.0%)    0.3152 (  9.5%)    SimpleCanonicalizer
-    0.1370 (  3.3%)    0.1370 (  4.1%)  RTLLegalizeNames
-    0.0751 (  1.8%)    0.0452 (  1.4%)  'rtl.module' Pipeline
-    0.0751 (  1.8%)    0.0451 (  1.4%)    PrettifyVerilog
-    0.2873 (  7.0%)    0.2873 (  8.7%)  Output
-    0.0045 (  0.1%)    0.0045 (  0.1%)  Rest
-    4.0894 (100.0%)    3.3041 (100.0%)  Total
-
 {
-  totalTime: 3.315,
-  maxMemory: 100720640
+  "errors": {},
+  "warnings": {}
 }
