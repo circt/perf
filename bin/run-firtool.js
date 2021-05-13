@@ -140,7 +140,7 @@ const firtool = async name => {
 }
 `;
 
-    await writeFile(logName, JSON.stringify(vlint(log), null, 2));
+    await writeFile(logName, log);
 
   } catch (err) {
     console.error(err);
