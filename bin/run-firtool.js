@@ -99,7 +99,7 @@ const unpack = async name => {
 const firtool = async name => {
   try {
     const t0 = Date.now();
-    const firtool = await cp.spawn(firtoolExec, [
+    const child = await cp.spawn(firtoolExec, [
       (testPath + '/' + name + '.fir'),
       '--lower-to-rtl',
       '--lower-types',
@@ -113,7 +113,7 @@ const firtool = async name => {
 
     const interval = async time => {
       timer = setTimeout(async () => {
-        const stats = await pidusage(firtool.pid);
+        const stats = await pidusage(child.pid);
         Object.keys(maxs).map(key => {
           maxs[key] = Math.max(maxs[key], stats[key]);
         });
@@ -123,20 +123,25 @@ const firtool = async name => {
 
     interval(200);
 
+    let log = '';
+
     const logName = 'docs/' + name + '-' + dateString(new Date()) + '.log';
-    for await (const log of firtool.stderr) { await writeFile(logName, log.toString()); }
-    for await (const log of firtool.stdout) { await writeFile(logName, log.toString()); }
-    await new Promise(resolve => { firtool.on('exit', resolve); });
+
+    for await (const err of child.stderr) { log += err.toString(); }
+    for await (const out of child.stdout) { log += out.toString(); }
+    await new Promise(resolve => { child.on('exit', resolve); });
 
     clearInterval(timer);
 
-    await appendFile(logName, `
+    log += `
 {
   totalTime: ${(Date.now() - t0) / 1000},
   maxMemory: ${maxs.memory}
 }
-`
-    );
+`;
+
+    await writeFile(logName, JSON.stringify(vlint(log), null, 2));
+
   } catch (err) {
     console.error(err);
   }
