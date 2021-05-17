@@ -1,7 +1,43 @@
-firtool: Unknown command line argument '--lower-to-rtl'.  Try: 'firtool --help'
-firtool: Did you mean '--lower-to-hw'?
+firtool: /tmp/circt/llvm/llvm/lib/Support/APInt.cpp:860: llvm::APInt llvm::APInt::trunc(unsigned int) const: Assertion `width && "Can't truncate to 0 bits"' failed.
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/test1.fir --lower-to-hw --lower-types --lowering-options=noAlwaysFF --mlir-timing --verilog -o=test1.v
+1.	2.	Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x494f3)[0x5593f78674f3]
+firtool(+0x472ae)[0x5593f78652ae]
+firtool(+0x49dcf)[0x5593f7867dcf]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f8d1e3aa3c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f8d1de6e18b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f8d1de4d859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7f8d1de4d729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7f8d1de5ef36]
+firtool(+0x55c27)[0x5593f7873c27]
+firtool(+0x5613d)[0x5593f787413d]
+firtool(+0x1ec441)[0x5593f7a0a441]
+firtool(+0x1ec973)[0x5593f7a0a973]
+firtool(+0x1e0d84)[0x5593f79fed84]
+firtool(+0x1abc5d)[0x5593f79c9c5d]
+firtool(+0x2bd91c)[0x5593f7adb91c]
+firtool(+0x2bce54)[0x5593f7adae54]
+firtool(+0x1283b8)[0x5593f79463b8]
+firtool(+0x33a4c2)[0x5593f7b584c2]
+firtool(+0x33aa23)[0x5593f7b58a23]
+firtool(+0x340712)[0x5593f7b5e712]
+firtool(+0x3405de)[0x5593f7b5e5de]
+firtool(+0x33b90c)[0x5593f7b5990c]
+firtool(+0x33a5bd)[0x5593f7b585bd]
+firtool(+0x33aa23)[0x5593f7b58a23]
+firtool(+0x340712)[0x5593f7b5e712]
+firtool(+0x3404ac)[0x5593f7b5e4ac]
+firtool(+0x33b90c)[0x5593f7b5990c]
+firtool(+0x33a5bd)[0x5593f7b585bd]
+firtool(+0x33aa23)[0x5593f7b58a23]
+firtool(+0x33d4ef)[0x5593f7b5b4ef]
+firtool(+0x15426)[0x5593f7833426]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f8d1de4f0b3]
+firtool(+0x179ee)[0x5593f78359ee]
 
 {
-  totalTime: 0.01,
-  maxMemory: 0
+  totalTime: 1.89,
+  maxMemory: 81072128
 }
