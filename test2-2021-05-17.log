@@ -1,32 +1,32 @@
 ===-------------------------------------------------------------------------===
                          ... Execution time report ...
 ===-------------------------------------------------------------------------===
-  Total Execution Time: 450.2187 seconds
+  Total Execution Time: 326.6030 seconds
 
   ----Wall Time----  ----Name----
-    4.4176 (  1.0%)  FIR Parser
-    9.9032 (  2.2%)  'firrtl.circuit' Pipeline
-    1.0545 (  0.2%)    LowerFIRRTLTypes
-    8.2425 (  1.8%)    'firrtl.module' Pipeline
-    1.6907 (  0.4%)      CSE
-    0.0272 (  0.0%)        (A) DominanceInfo
-    6.0106 (  1.3%)      SimpleCanonicalizer
-    0.5412 (  0.1%)      CheckWidths
-    3.7557 (  0.8%)  LowerFIRRTLToHW
-    1.4987 (  0.3%)  HWMemSimImpl
-  420.3314 ( 93.4%)  'hw.module' Pipeline
-    1.3551 (  0.3%)    HWCleanup
-    2.2295 (  0.5%)    CSE
-    0.3123 (  0.1%)      (A) DominanceInfo
-  416.7467 ( 92.6%)    SimpleCanonicalizer
-    2.0867 (  0.5%)  HWLegalizeNames
-    1.1478 (  0.3%)  'hw.module' Pipeline
-    1.1478 (  0.3%)    PrettifyVerilog
-    3.2630 (  0.7%)  Output
-    0.0053 (  0.0%)  Rest
-  450.2187 (100.0%)  Total
+    4.0715 (  1.2%)  FIR Parser
+    8.4780 (  2.6%)  'firrtl.circuit' Pipeline
+    0.9496 (  0.3%)    LowerFIRRTLTypes
+    6.9574 (  2.1%)    'firrtl.module' Pipeline
+    1.4392 (  0.4%)      CSE
+    0.0251 (  0.0%)        (A) DominanceInfo
+    5.0274 (  1.5%)      SimpleCanonicalizer
+    0.4908 (  0.2%)      CheckWidths
+    3.2154 (  1.0%)  LowerFIRRTLToHW
+    1.3633 (  0.4%)  HWMemSimImpl
+  300.4815 ( 92.0%)  'hw.module' Pipeline
+    1.1482 (  0.4%)    HWCleanup
+    1.8615 (  0.6%)    CSE
+    0.2817 (  0.1%)      (A) DominanceInfo
+  297.4718 ( 91.1%)    SimpleCanonicalizer
+    1.6354 (  0.5%)  HWLegalizeNames
+    1.1126 (  0.3%)  'hw.module' Pipeline
+    1.1126 (  0.3%)    PrettifyVerilog
+    3.1209 (  1.0%)  Output
+    0.0015 (  0.0%)  Rest
+  326.6030 (100.0%)  Total
 
 {
-  totalTime: 450.245,
-  maxMemory: 719667200
+  totalTime: 326.635,
+  maxMemory: 719728640
 }
