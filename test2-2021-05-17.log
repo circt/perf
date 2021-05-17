@@ -1,32 +1,32 @@
 ===-------------------------------------------------------------------------===
                          ... Execution time report ...
 ===-------------------------------------------------------------------------===
-  Total Execution Time: 260.1810 seconds
+  Total Execution Time: 165.8867 seconds
 
   ----Wall Time----  ----Name----
-    3.8512 (  1.5%)  FIR Parser
-    9.3457 (  3.6%)  'firrtl.circuit' Pipeline
-    0.9370 (  0.4%)    LowerFIRRTLTypes
-    7.7602 (  3.0%)    'firrtl.module' Pipeline
-    1.4643 (  0.6%)      CSE
-    0.0260 (  0.0%)        (A) DominanceInfo
-    5.7039 (  2.2%)      SimpleCanonicalizer
-    0.5920 (  0.2%)      CheckWidths
-    3.9013 (  1.5%)  LowerFIRRTLToRTL
-    1.3649 (  0.5%)  RTLMemSimImpl
-  232.6759 ( 89.4%)  'rtl.module' Pipeline
-    1.2138 (  0.5%)    RTLCleanup
-    2.4584 (  0.9%)    CSE
-    0.2818 (  0.1%)      (A) DominanceInfo
-  229.0037 ( 88.0%)    SimpleCanonicalizer
-    1.7090 (  0.7%)  RTLLegalizeNames
-    1.0966 (  0.4%)  'rtl.module' Pipeline
-    1.0965 (  0.4%)    PrettifyVerilog
-    3.0121 (  1.2%)  Output
-    0.0013 (  0.0%)  Rest
-  260.1810 (100.0%)  Total
+    3.3099 (  2.0%)  FIR Parser
+    8.4597 (  5.1%)  'firrtl.circuit' Pipeline
+    0.8628 (  0.5%)    LowerFIRRTLTypes
+    7.0358 (  4.2%)    'firrtl.module' Pipeline
+    1.1992 (  0.7%)      CSE
+    0.0237 (  0.0%)        (A) DominanceInfo
+    5.3184 (  3.2%)      SimpleCanonicalizer
+    0.5182 (  0.3%)      CheckWidths
+    3.6381 (  2.2%)  LowerFIRRTLToRTL
+    1.2467 (  0.8%)  RTLMemSimImpl
+  140.8950 ( 84.9%)  'rtl.module' Pipeline
+    1.1353 (  0.7%)    RTLCleanup
+    2.3674 (  1.4%)    CSE
+    0.2435 (  0.1%)      (A) DominanceInfo
+  137.3923 ( 82.8%)    SimpleCanonicalizer
+    1.5229 (  0.9%)  RTLLegalizeNames
+    0.9887 (  0.6%)  'rtl.module' Pipeline
+    0.9887 (  0.6%)    PrettifyVerilog
+    2.9733 (  1.8%)  Output
+    0.0027 (  0.0%)  Rest
+  165.8867 (100.0%)  Total
 
 {
-  totalTime: 260.211,
-  maxMemory: 780664832
+  totalTime: 165.915,
+  maxMemory: 781012992
 }
