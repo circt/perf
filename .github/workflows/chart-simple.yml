@@ -22,6 +22,8 @@ jobs:
         run: which firtool
       - name: firtool --version
         run: firtool --version
+      - lscpu: CPU type
+        run: lscpu
       - name: run firtool
         run: ./bin/run-firtool.js
       - name: Install rsync 📚
