@@ -1,32 +1,7 @@
-===-------------------------------------------------------------------------===
-                         ... Execution time report ...
-===-------------------------------------------------------------------------===
-  Total Execution Time: 182.3867 seconds
-
-  ----Wall Time----  ----Name----
-    3.7479 (  2.1%)  FIR Parser
-    9.4252 (  5.2%)  'firrtl.circuit' Pipeline
-    0.9144 (  0.5%)    LowerFIRRTLTypes
-    7.8636 (  4.3%)    'firrtl.module' Pipeline
-    1.3783 (  0.8%)      CSE
-    0.0264 (  0.0%)        (A) DominanceInfo
-    5.8881 (  3.2%)      SimpleCanonicalizer
-    0.5972 (  0.3%)      CheckWidths
-    3.8337 (  2.1%)  LowerFIRRTLToRTL
-    1.3279 (  0.7%)  RTLMemSimImpl
-  155.2334 ( 85.1%)  'rtl.module' Pipeline
-    1.2011 (  0.7%)    RTLCleanup
-    2.4797 (  1.4%)    CSE
-    0.2762 (  0.2%)      (A) DominanceInfo
-  151.5525 ( 83.1%)    SimpleCanonicalizer
-    1.5561 (  0.9%)  RTLLegalizeNames
-    1.0814 (  0.6%)  'rtl.module' Pipeline
-    1.0814 (  0.6%)    PrettifyVerilog
-    3.0665 (  1.7%)  Output
-    0.0014 (  0.0%)  Rest
-  182.3867 (100.0%)  Total
+firtool: Unknown command line argument '--lower-to-rtl'.  Try: 'firtool --help'
+firtool: Did you mean '--lower-to-hw'?
 
 {
-  totalTime: 182.416,
-  maxMemory: 781930496
+  totalTime: 0.005,
+  maxMemory: 0
 }
