@@ -102,7 +102,7 @@ const firtool = async name => {
     const t0 = Date.now();
     const child = await cp.spawn(firtoolExec, [
       (testPath + '/' + name + '.fir'),
-      '--lower-to-hw',
+      '--lower-to-rtl',
       '--lower-types',
       '--lowering-options=noAlwaysFF',
       '--mlir-timing',
