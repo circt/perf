@@ -103,7 +103,6 @@ const firtool = async name => {
     const child = await cp.spawn(firtoolExec, [
       (testPath + '/' + name + '.fir'),
       '--lower-to-hw',
-      '--lower-types',
       '--lowering-options=noAlwaysFF',
       '--mlir-timing',
       '--verilog',
