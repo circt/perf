@@ -1,0 +1,35 @@
+firtool: ../llvm/llvm/include/llvm/ADT/APInt.h:280: llvm::APInt::APInt(unsigned int, uint64_t, bool): Assertion `BitWidth && "bitwidth too small"' failed.
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/test1.fir --lower-to-hw --lowering-options=noAlwaysFF --mlir-timing --verilog -o=test1.v
+1.	Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x4ca73)[0x5631f3e8ea73]
+firtool(+0x4a82e)[0x5631f3e8c82e]
+firtool(+0x4d34f)[0x5631f3e8f34f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f1c492b93c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f1c48d7d18b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f1c48d5c859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7f1c48d5c729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7f1c48d6df36]
+firtool(+0x21296a)[0x5631f405496a]
+firtool(+0x21422d)[0x5631f405622d]
+firtool(+0x20016b)[0x5631f404216b]
+firtool(+0x1c0d15)[0x5631f4002d15]
+firtool(+0x107866)[0x5631f3f49866]
+firtool(+0x10b145)[0x5631f3f4d145]
+firtool(+0x3811c2)[0x5631f41c31c2]
+firtool(+0x381723)[0x5631f41c3723]
+firtool(+0x385c32)[0x5631f41c7c32]
+firtool(+0x3859cc)[0x5631f41c79cc]
+firtool(+0x38260c)[0x5631f41c460c]
+firtool(+0x3812bd)[0x5631f41c32bd]
+firtool(+0x381723)[0x5631f41c3723]
+firtool(+0x3832cc)[0x5631f41c52cc]
+firtool(+0x189a0)[0x5631f3e5a9a0]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f1c48d5e0b3]
+firtool(+0x1af3e)[0x5631f3e5cf3e]
+
+{
+  totalTime: 1.806,
+  maxMemory: 91209728
+}
