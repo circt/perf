@@ -23,7 +23,8 @@ const tests = [
   // 'Rob.lo',
   // 'test0',
   'test1',
-  'test2'
+  'test2',
+  'test3'
 ];
 
 const count = (obj, key, delta) => {
@@ -104,6 +105,7 @@ const firtool = async name => {
       (testPath + '/' + name + '.fir'),
       '--lower-to-hw',
       '--lowering-options=noAlwaysFF',
+      '--imconstprop',
       '--mlir-timing',
       '--verilog',
       '-o=' + (name + '.v')
