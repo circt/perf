@@ -1,6 +1,39 @@
-firtool: for the --lowering-options option: unknown style option 'noAlwaysFF'
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 30.4018 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    9.3265 ( 23.0%)    9.3265 ( 30.7%)  FIR Parser
+   17.5936 ( 43.3%)   10.2008 ( 33.6%)  'firrtl.circuit' Pipeline
+    2.4286 (  6.0%)    1.3654 (  4.5%)    'firrtl.module' Pipeline
+    2.4285 (  6.0%)    1.3654 (  4.5%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.2552 (  0.6%)    0.2552 (  0.8%)    InferWidths
+    1.4531 (  3.6%)    1.4531 (  4.8%)    LowerFIRRTLTypes
+   10.8230 ( 26.6%)    5.9948 ( 19.7%)    'firrtl.module' Pipeline
+    3.5144 (  8.6%)    1.9330 (  6.4%)      ExpandWhens
+    7.3085 ( 18.0%)    4.0618 ( 13.4%)      SimpleCanonicalizer
+    1.0855 (  2.7%)    1.0855 (  3.6%)    IMConstProp
+    0.0558 (  0.1%)    0.0558 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    BlackBoxReader
+    0.0751 (  0.2%)    0.0425 (  0.1%)    'firrtl.module' Pipeline
+    0.0750 (  0.2%)    0.0425 (  0.1%)      CheckWidths
+    2.2288 (  5.5%)    2.2288 (  7.3%)  LowerFIRRTLToHW
+    1.3944 (  3.4%)    1.3944 (  4.6%)  HWMemSimImpl
+    4.3986 ( 10.8%)    2.3472 (  7.7%)  'hw.module' Pipeline
+    0.1452 (  0.4%)    0.0760 (  0.2%)    HWCleanup
+    2.1495 (  5.3%)    1.1616 (  3.8%)    CSE
+    0.0068 (  0.0%)    0.0037 (  0.0%)      (A) DominanceInfo
+    2.0581 (  5.1%)    1.0861 (  3.6%)    SimpleCanonicalizer
+    1.4226 (  3.5%)    1.4226 (  4.7%)  HWLegalizeNames
+    1.6633 (  4.1%)    0.8787 (  2.9%)  'hw.module' Pipeline
+    1.6214 (  4.0%)    0.8574 (  2.8%)    PrettifyVerilog
+    2.5717 (  6.3%)    2.5717 (  8.5%)  Output
+    0.0023 (  0.0%)    0.0023 (  0.0%)  Rest
+   40.6305 (100.0%)   30.4018 (100.0%)  Total
 
 {
-  totalTime: 0.004,
-  maxMemory: 0
+  totalTime: 30.443,
+  maxMemory: 1002237952
 }

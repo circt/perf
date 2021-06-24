@@ -1,6 +1,39 @@
-firtool: for the --lowering-options option: unknown style option 'noAlwaysFF'
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 18.8710 seconds
+
+  ----Wall Time----  ----Name----
+    3.6105 ( 19.1%)  FIR Parser
+    7.8361 ( 41.5%)  'firrtl.circuit' Pipeline
+    1.1801 (  6.3%)    'firrtl.module' Pipeline
+    1.1801 (  6.3%)      CSE
+    0.0000 (  0.0%)        (A) DominanceInfo
+    0.0932 (  0.5%)    InferWidths
+    0.6729 (  3.6%)    LowerFIRRTLTypes
+    5.0369 ( 26.7%)    'firrtl.module' Pipeline
+    0.7448 (  3.9%)      ExpandWhens
+    4.2921 ( 22.7%)      SimpleCanonicalizer
+    0.8004 (  4.2%)    IMConstProp
+    0.0300 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    BlackBoxReader
+    0.0525 (  0.3%)    'firrtl.module' Pipeline
+    0.0525 (  0.3%)      CheckWidths
+    1.9984 ( 10.6%)  LowerFIRRTLToHW
+    0.0000 (  0.0%)  HWMemSimImpl
+    3.1396 ( 16.6%)  'hw.module' Pipeline
+    0.0754 (  0.4%)    HWCleanup
+    0.8711 (  4.6%)    CSE
+    0.0000 (  0.0%)      (A) DominanceInfo
+    2.1931 ( 11.6%)    SimpleCanonicalizer
+    0.2594 (  1.4%)  HWLegalizeNames
+    0.6838 (  3.6%)  'hw.module' Pipeline
+    0.6838 (  3.6%)    PrettifyVerilog
+    1.3416 (  7.1%)  Output
+    0.0015 (  0.0%)  Rest
+   18.8710 (100.0%)  Total
 
 {
-  totalTime: 0.004,
-  maxMemory: 0
+  totalTime: 18.893,
+  maxMemory: 559341568
 }
