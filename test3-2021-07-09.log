@@ -1,30 +1,39 @@
-PartialConnectOps should have been removed.
-UNREACHABLE executed at ../lib/Dialect/FIRRTL/Transforms/ExpandWhens.cpp:186!
-PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
-Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
-firtool(+0x50063)[0x55e680286063]
-firtool(+0x4de1e)[0x55e680283e1e]
-firtool(+0x5093f)[0x55e68028693f]
-/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7fa59dc433c0]
-/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7fa59d70718b]
-/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7fa59d6e6859]
-firtool(+0x31c61)[0x55e680267c61]
-firtool(+0x109e95)[0x55e68033fe95]
-firtool(+0x10ad6e)[0x55e680340d6e]
-firtool(+0x3d4532)[0x55e68060a532]
-firtool(+0x3d4b53)[0x55e68060ab53]
-firtool(+0x3d92d2)[0x55e68060f2d2]
-firtool(+0x3d938d)[0x55e68060f38d]
-firtool(+0x3fdb1f)[0x55e680633b1f]
-firtool(+0x3f7267)[0x55e68062d267]
-/lib/x86_64-linux-gnu/libpthread.so.0(+0x1247f)[0x7fa59dc4047f]
-firtool(+0x3fd8b1)[0x55e6806338b1]
-firtool(+0x3fd383)[0x55e680633383]
-/lib/x86_64-linux-gnu/libstdc++.so.6(+0xd6d84)[0x7fa59daf3d84]
-/lib/x86_64-linux-gnu/libpthread.so.0(+0x9609)[0x7fa59dc37609]
-/lib/x86_64-linux-gnu/libc.so.6(clone+0x43)[0x7fa59d7e3293]
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 35.1317 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+   10.3336 ( 21.6%)   10.3336 ( 29.4%)  FIR Parser
+   20.3284 ( 42.5%)   11.8304 ( 33.7%)  'firrtl.circuit' Pipeline
+    2.9023 (  6.1%)    1.6329 (  4.6%)    'firrtl.module' Pipeline
+    2.9023 (  6.1%)    1.6329 (  4.6%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.2735 (  0.6%)    0.2735 (  0.8%)    InferWidths
+    1.7815 (  3.7%)    1.7815 (  5.1%)    LowerBundleVector
+   12.3226 ( 25.7%)    6.8269 ( 19.4%)    'firrtl.module' Pipeline
+    3.9664 (  8.3%)    2.1776 (  6.2%)      ExpandWhens
+    8.3562 ( 17.5%)    4.6493 ( 13.2%)      SimpleCanonicalizer
+    1.2732 (  2.7%)    1.2732 (  3.6%)    IMConstProp
+    0.0545 (  0.1%)    0.0545 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    BlackBoxReader
+    0.0704 (  0.1%)    0.0382 (  0.1%)    'firrtl.module' Pipeline
+    0.0704 (  0.1%)    0.0382 (  0.1%)      CheckWidths
+    2.4932 (  5.2%)    2.4932 (  7.1%)  LowerFIRRTLToHW
+    1.5417 (  3.2%)    1.5417 (  4.4%)  HWMemSimImpl
+    5.9307 ( 12.4%)    2.9958 (  8.5%)  'hw.module' Pipeline
+    0.1695 (  0.4%)    0.0858 (  0.2%)    HWCleanup
+    2.9047 (  6.1%)    1.4803 (  4.2%)    CSE
+    0.0075 (  0.0%)    0.0038 (  0.0%)      (A) DominanceInfo
+    2.7997 (  5.9%)    1.4036 (  4.0%)    SimpleCanonicalizer
+    1.5095 (  3.2%)    1.5095 (  4.3%)  HWLegalizeNames
+    2.3201 (  4.8%)    1.2914 (  3.7%)  'hw.module' Pipeline
+    2.2777 (  4.8%)    1.2709 (  3.6%)    PrettifyVerilog
+    3.1038 (  6.5%)    3.1038 (  8.8%)  Output
+    0.0028 (  0.0%)    0.0028 (  0.0%)  Rest
+   47.8559 (100.0%)   35.1317 (100.0%)  Total
 
 {
-  totalTime: 13.239,
-  maxMemory: 850722816
+  totalTime: 35.182,
+  maxMemory: 1072160768
 }
