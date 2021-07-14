@@ -1,0 +1,23 @@
+name: Perf charts NPM
+
+on: [push]
+
+jobs:
+  firtool-perf:
+    name: firtool performance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install NPM Dependencies
+        run: npm i
+      - name: which firtool
+        run: which firtool
+      - name: firtool --version
+        run: firtool --version
+      - name: CPU type
+        run: lscpu
+      - name: run firtool
+        run: ./bin/run-firtool.js

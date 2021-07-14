@@ -23,16 +23,17 @@
   "homepage": "https://github.com/circt/perf#readme",
   "devDependencies": {
     "@drom/eslint-config": "^0.10.0",
-    "browserify": "^16.5.2",
+    "browserify": "^17.0.0",
     "chai": "^4.2.0",
-    "eslint": "^7.15.0",
+    "eslint": "^7.30.0",
     "http-server": "^0.12.3",
-    "mocha": "^8.2.1",
+    "mocha": "^9.0.2",
     "nyc": "^15.1.0",
-    "plotly.js-dist": "^1.58.4",
-    "watchify": "^3.11.1"
+    "plotly.js-dist": "^2.2.1",
+    "watchify": "^4.0.0"
   },
   "dependencies": {
+    "circt": "^0.1.2",
     "pidusage": "^2.0.21"
   },
   "eslintConfig": {
