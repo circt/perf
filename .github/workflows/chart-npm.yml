@@ -13,6 +13,8 @@ jobs:
           node-version: '16'
       - name: Install NPM Dependencies
         run: npm i
+      - name: PATH fix
+        run: export PATH="./node_modules/.bin:$PATH"
       - name: which firtool
         run: which firtool
       - name: firtool --version
