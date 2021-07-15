@@ -7,7 +7,7 @@ jobs:
     name: firtool performance
     runs-on: ubuntu-latest
     steps:
-      - name: Install xmllint
+      - name: Install verilator
         run: sudo apt-get install verilator
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
