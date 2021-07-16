@@ -1,0 +1,39 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 1.2992 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    0.2561 ( 14.7%)    0.2561 ( 19.7%)  FIR Parser
+    0.7308 ( 42.0%)    0.4656 ( 35.8%)  'firrtl.circuit' Pipeline
+    0.1029 (  5.9%)    0.0580 (  4.5%)    'firrtl.module' Pipeline
+    0.1029 (  5.9%)    0.0580 (  4.5%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.0124 (  0.7%)    0.0124 (  1.0%)    InferWidths
+    0.1008 (  5.8%)    0.1008 (  7.8%)    LowerFIRRTLTypes
+    0.4719 ( 27.2%)    0.2534 ( 19.5%)    'firrtl.module' Pipeline
+    0.0773 (  4.4%)    0.0441 (  3.4%)      ExpandWhens
+    0.3946 ( 22.7%)    0.2093 ( 16.1%)      SimpleCanonicalizer
+    0.0384 (  2.2%)    0.0384 (  3.0%)    IMConstProp
+    0.0033 (  0.2%)    0.0033 (  0.3%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    BlackBoxReader
+    0.0042 (  0.2%)    0.0024 (  0.2%)    'firrtl.module' Pipeline
+    0.0042 (  0.2%)    0.0024 (  0.2%)      CheckWidths
+    0.1621 (  9.3%)    0.1621 ( 12.5%)  LowerFIRRTLToHW
+    0.0000 (  0.0%)    0.0000 (  0.0%)  HWMemSimImpl
+    0.3361 ( 19.3%)    0.1831 ( 14.1%)  'hw.module' Pipeline
+    0.0083 (  0.5%)    0.0058 (  0.4%)    HWCleanup
+    0.1527 (  8.8%)    0.0837 (  6.4%)    CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) DominanceInfo
+    0.1751 ( 10.1%)    0.0936 (  7.2%)    SimpleCanonicalizer
+    0.0260 (  1.5%)    0.0260 (  2.0%)  HWLegalizeNames
+    0.0487 (  2.8%)    0.0279 (  2.1%)  'hw.module' Pipeline
+    0.0487 (  2.8%)    0.0279 (  2.1%)    PrettifyVerilog
+    0.1774 ( 10.2%)    0.1774 ( 13.7%)  Output
+    0.0008 (  0.0%)    0.0008 (  0.1%)  Rest
+    1.7383 (100.0%)    1.2992 (100.0%)  Total
+
+{
+  totalTime: 1.309,
+  maxMemory: 91090944
+}
