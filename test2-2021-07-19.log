@@ -1,0 +1,37 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 20.3821 seconds
+
+  ----Wall Time----  ----Name----
+    3.5543 ( 17.4%)  FIR Parser
+    8.0116 ( 39.3%)  'firrtl.circuit' Pipeline
+    1.1663 (  5.7%)    'firrtl.module' Pipeline
+    1.1663 (  5.7%)      CSE
+    0.0000 (  0.0%)        (A) DominanceInfo
+    0.1100 (  0.5%)    InferWidths
+    0.6005 (  2.9%)    LowerFIRRTLTypes
+    5.1460 ( 25.2%)    'firrtl.module' Pipeline
+    0.7539 (  3.7%)      ExpandWhens
+    4.3921 ( 21.5%)      SimpleCanonicalizer
+    0.9887 (  4.9%)    IMConstProp
+    0.0346 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    BlackBoxReader
+    2.2092 ( 10.8%)  LowerFIRRTLToHW
+    0.0000 (  0.0%)  HWMemSimImpl
+    3.8429 ( 18.9%)  'hw.module' Pipeline
+    0.0905 (  0.4%)    HWCleanup
+    1.0161 (  5.0%)    CSE
+    0.0000 (  0.0%)      (A) DominanceInfo
+    2.7363 ( 13.4%)    SimpleCanonicalizer
+    0.3247 (  1.6%)  HWLegalizeNames
+    0.7881 (  3.9%)  'hw.module' Pipeline
+    0.7881 (  3.9%)    PrettifyVerilog
+    1.6495 (  8.1%)  Output
+    0.0016 (  0.0%)  Rest
+   20.3821 (100.0%)  Total
+
+{
+  totalTime: 20.406,
+  maxMemory: 598122496
+}
