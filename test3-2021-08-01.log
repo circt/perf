@@ -1,0 +1,28 @@
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x5a953)[0x55b99a04d953]
+firtool(+0x5870e)[0x55b99a04b70e]
+firtool(+0x5af4f)[0x55b99a04df4f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f505fcf73c0]
+firtool(+0x1c9693)[0x55b99a1bc693]
+firtool(+0x3083e7)[0x55b99a2fb3e7]
+firtool(+0x311426)[0x55b99a304426]
+firtool(+0x31ea4f)[0x55b99a311a4f]
+firtool(+0x367424)[0x55b99a35a424]
+firtool(+0x355ec4)[0x55b99a348ec4]
+firtool(+0x3e5f05)[0x55b99a3d8f05]
+firtool(+0x3e6533)[0x55b99a3d9533]
+firtool(+0x3eacc2)[0x55b99a3ddcc2]
+firtool(+0x3ead7d)[0x55b99a3ddd7d]
+firtool(+0x40c9df)[0x55b99a3ff9df]
+firtool(+0x408f67)[0x55b99a3fbf67]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x1247f)[0x7f505fcf447f]
+firtool(+0x40c771)[0x55b99a3ff771]
+firtool(+0x40c243)[0x55b99a3ff243]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x9609)[0x7f505fceb609]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x43)[0x7f505f897293]
+
+{
+  totalTime: 28.03,
+  maxMemory: 1043881984
+}
