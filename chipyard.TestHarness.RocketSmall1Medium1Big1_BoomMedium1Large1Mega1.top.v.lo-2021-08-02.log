@@ -1,0 +1,7 @@
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/chipyard.TestHarness.RocketSmall1Medium1Big1_Boo
+{
+  totalTime: 11.569,
+  maxMemory: 772222976
+}
