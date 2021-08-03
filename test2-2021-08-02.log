@@ -1,30 +1,38 @@
-PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
-Stack dump:
-0.	Program arguments: firtool regress/test2.fir --lower-to-hw --imconstprop --mlir-timing --verilog -o=test2.v
-Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
-firtool(+0x5a953)[0x55a58cce2953]
-firtool(+0x5870e)[0x55a58cce070e]
-firtool(+0x5af4f)[0x55a58cce2f4f]
-/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f75ab8993c0]
-firtool(+0x1c96f3)[0x55a58ce516f3]
-firtool(+0x308407)[0x55a58cf90407]
-firtool(+0x311446)[0x55a58cf99446]
-firtool(+0x31ea6f)[0x55a58cfa6a6f]
-firtool(+0x367444)[0x55a58cfef444]
-firtool(+0x355ee4)[0x55a58cfddee4]
-firtool(+0x3e5f25)[0x55a58d06df25]
-firtool(+0x3e6553)[0x55a58d06e553]
-firtool(+0x3eace2)[0x55a58d072ce2]
-firtool(+0x3ea77b)[0x55a58d07277b]
-firtool(+0x3e7374)[0x55a58d06f374]
-firtool(+0x3e6024)[0x55a58d06e024]
-firtool(+0x3e6553)[0x55a58d06e553]
-firtool(+0x3e80fc)[0x55a58d0700fc]
-firtool(+0x1bbdb)[0x55a58cca3bdb]
-/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f75ab33e0b3]
-firtool(+0x1c5ae)[0x55a58cca45ae]
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 22.6430 seconds
+
+  ----Wall Time----  ----Name----
+    3.9483 ( 17.4%)  FIR Parser
+    9.2415 ( 40.8%)  'firrtl.circuit' Pipeline
+    1.2937 (  5.7%)    'firrtl.module' Pipeline
+    1.2937 (  5.7%)      CSE
+    0.0000 (  0.0%)        (A) DominanceInfo
+    0.1032 (  0.5%)    InferWidths
+    0.6558 (  2.9%)    LowerFIRRTLTypes
+    5.6675 ( 25.0%)    'firrtl.module' Pipeline
+    0.8330 (  3.7%)      ExpandWhens
+    4.8345 ( 21.4%)      Canonicalizer
+    0.3986 (  1.8%)    Inliner
+    1.1226 (  5.0%)    IMConstProp
+    0.0336 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    BlackBoxReader
+    2.3501 ( 10.4%)  LowerFIRRTLToHW
+    0.0000 (  0.0%)  HWMemSimImpl
+    4.0821 ( 18.0%)  'hw.module' Pipeline
+    0.0868 (  0.4%)    HWCleanup
+    1.1157 (  4.9%)    CSE
+    0.0000 (  0.0%)      (A) DominanceInfo
+    2.8795 ( 12.7%)    Canonicalizer
+    0.3257 (  1.4%)  HWLegalizeNames
+    0.8370 (  3.7%)  'hw.module' Pipeline
+    0.8370 (  3.7%)    PrettifyVerilog
+    1.8564 (  8.2%)  Output
+    0.0018 (  0.0%)  Rest
+   22.6430 (100.0%)  Total
 
 {
-  totalTime: 18.395,
-  maxMemory: 581877760
+  totalTime: 22.671,
+  maxMemory: 599158784
 }

@@ -1,30 +1,38 @@
-PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
-Stack dump:
-0.	Program arguments: firtool regress/chipyard.TestHarness.RocketSmall1Medium1Big1_BoomMedium1Large1Mega1.top.v.lo.fir --lower-to-hw --imconstprop --mlir-timing --verilog -o=chipyard.TestHarness.RocketSmall1Medium1Big1_BoomMedium1Large1Mega1.top.v.lo.v
-1.	Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
-firtool(+0x5a953)[0x55efcc283953]
-firtool(+0x5870e)[0x55efcc28170e]
-firtool(+0x5af4f)[0x55efcc283f4f]
-/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f9c0e58e3c0]
-firtool(+0x1c96f3)[0x55efcc3f26f3]
-firtool(+0x308407)[0x55efcc531407]
-firtool(+0x311446)[0x55efcc53a446]
-firtool(+0x31ea6f)[0x55efcc547a6f]
-firtool(+0x367444)[0x55efcc590444]
-firtool(+0x355ee4)[0x55efcc57eee4]
-firtool(+0x3e5f25)[0x55efcc60ef25]
-firtool(+0x3e6553)[0x55efcc60f553]
-firtool(+0x3eace2)[0x55efcc613ce2]
-firtool(+0x3ea9f2)[0x55efcc6139f2]
-firtool(+0x3e7374)[0x55efcc610374]
-firtool(+0x3e6024)[0x55efcc60f024]
-firtool(+0x3e6553)[0x55efcc60f553]
-firtool(+0x3e80fc)[0x55efcc6110fc]
-firtool(+0x1bbdb)[0x55efcc244bdb]
-/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f9c0e0330b3]
-firtool(+0x1c5ae)[0x55efcc2455ae]
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 13.2226 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    3.8181 ( 23.0%)    3.8181 ( 28.9%)  FIR Parser
+    6.9949 ( 42.1%)    4.8724 ( 36.8%)  'firrtl.circuit' Pipeline
+    1.4965 (  9.0%)    0.7497 (  5.7%)    'firrtl.module' Pipeline
+    1.4939 (  9.0%)    0.7483 (  5.7%)      CSE
+    0.0010 (  0.0%)    0.0005 (  0.0%)        (A) DominanceInfo
+    0.1012 (  0.6%)    0.1012 (  0.8%)    InferWidths
+    0.4673 (  2.8%)    0.4673 (  3.5%)    LowerFIRRTLTypes
+    2.7363 ( 16.5%)    1.3728 ( 10.4%)    'firrtl.module' Pipeline
+    1.3171 (  7.9%)    0.7062 (  5.3%)      ExpandWhens
+    1.4147 (  8.5%)    0.7505 (  5.7%)      Canonicalizer
+    0.4244 (  2.6%)    0.4244 (  3.2%)    Inliner
+    1.7525 ( 10.5%)    1.7525 ( 13.3%)    IMConstProp
+    0.0345 (  0.2%)    0.0345 (  0.3%)      (A) circt::firrtl::InstanceGraph
+    0.0003 (  0.0%)    0.0003 (  0.0%)    BlackBoxReader
+    0.9585 (  5.8%)    0.9585 (  7.2%)  LowerFIRRTLToHW
+    0.2089 (  1.3%)    0.2089 (  1.6%)  HWMemSimImpl
+    2.1873 ( 13.2%)    1.0939 (  8.3%)  'hw.module' Pipeline
+    0.0568 (  0.3%)    0.0296 (  0.2%)    HWCleanup
+    0.8435 (  5.1%)    0.4486 (  3.4%)    CSE
+    0.0014 (  0.0%)    0.0008 (  0.0%)      (A) DominanceInfo
+    1.2792 (  7.7%)    0.6647 (  5.0%)    Canonicalizer
+    0.3845 (  2.3%)    0.3845 (  2.9%)  HWLegalizeNames
+    0.3593 (  2.2%)    0.1803 (  1.4%)  'hw.module' Pipeline
+    0.3556 (  2.1%)    0.1785 (  1.4%)    PrettifyVerilog
+    1.6958 ( 10.2%)    1.6958 ( 12.8%)  Output
+    0.0060 (  0.0%)    0.0060 (  0.0%)  Rest
+   16.6176 (100.0%)   13.2226 (100.0%)  Total
 
 {
-  totalTime: 11.001,
-  maxMemory: 778518528
+  totalTime: 13.258,
+  maxMemory: 775487488
 }
