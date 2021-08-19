@@ -1,0 +1,42 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 1.3020 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    0.2674 ( 16.0%)    0.2674 ( 20.5%)  FIR Parser
+    1.1382 ( 68.2%)    0.7712 ( 59.2%)  'firrtl.circuit' Pipeline
+    0.1306 (  7.8%)    0.0682 (  5.2%)    'firrtl.module' Pipeline
+    0.1306 (  7.8%)    0.0682 (  5.2%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.0151 (  0.9%)    0.0151 (  1.2%)    InferWidths
+    0.0577 (  3.5%)    0.0577 (  4.4%)    InferResets
+    0.0023 (  0.1%)    0.0023 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.1402 (  8.4%)    0.1402 ( 10.8%)    LowerFIRRTLTypes
+    0.6298 ( 37.7%)    0.3251 ( 25.0%)    'firrtl.module' Pipeline
+    0.0992 (  5.9%)    0.0520 (  4.0%)      ExpandWhens
+    0.5305 ( 31.8%)    0.2731 ( 21.0%)      Canonicalizer
+    0.0234 (  1.4%)    0.0234 (  1.8%)    Inliner
+    0.0294 (  1.8%)    0.0294 (  2.3%)    IMConstProp
+    0.0004 (  0.0%)    0.0004 (  0.0%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    BlackBoxReader
+    0.1117 (  6.7%)    0.1117 (  8.6%)    'firrtl.module' Pipeline
+    0.1116 (  6.7%)    0.1116 (  8.6%)      Canonicalizer
+    0.0899 (  5.4%)    0.0899 (  6.9%)  LowerFIRRTLToHW
+    0.0000 (  0.0%)    0.0000 (  0.0%)  HWMemSimImpl
+    0.0933 (  5.6%)    0.0933 (  7.2%)  'hw.module' Pipeline
+    0.0010 (  0.1%)    0.0010 (  0.1%)    HWCleanup
+    0.0285 (  1.7%)    0.0285 (  2.2%)    CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) DominanceInfo
+    0.0638 (  3.8%)    0.0638 (  4.9%)    Canonicalizer
+    0.0054 (  0.3%)    0.0054 (  0.4%)  HWLegalizeNames
+    0.0156 (  0.9%)    0.0156 (  1.2%)  'hw.module' Pipeline
+    0.0156 (  0.9%)    0.0156 (  1.2%)    PrettifyVerilog
+    0.0584 (  3.5%)    0.0584 (  4.5%)  Output
+    0.0009 (  0.1%)    0.0009 (  0.1%)  Rest
+    1.6691 (100.0%)    1.3020 (100.0%)  Total
+
+{
+  totalTime: 1.312,
+  maxMemory: 65482752
+}
