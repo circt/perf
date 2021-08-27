@@ -1,0 +1,44 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 25.7973 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    4.7466 ( 14.9%)    4.7466 ( 18.4%)  FIR Parser
+   14.1349 ( 44.5%)    9.7760 ( 37.9%)  'firrtl.circuit' Pipeline
+    2.3020 (  7.2%)    1.1529 (  4.5%)    'firrtl.module' Pipeline
+    2.1025 (  6.6%)    1.0545 (  4.1%)      CSE
+    0.0014 (  0.0%)    0.0008 (  0.0%)        (A) DominanceInfo
+    0.1945 (  0.6%)    0.0980 (  0.4%)      LowerCHIRRTL
+    0.1378 (  0.4%)    0.1378 (  0.5%)    InferWidths
+    0.9351 (  2.9%)    0.9351 (  3.6%)    InferResets
+    0.0501 (  0.2%)    0.0501 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.8085 (  2.5%)    0.8085 (  3.1%)    LowerFIRRTLTypes
+    4.5654 ( 14.4%)    2.2882 (  8.9%)    'firrtl.module' Pipeline
+    2.3600 (  7.4%)    1.2064 (  4.7%)      ExpandWhens
+    2.2001 (  6.9%)    1.1211 (  4.3%)      Canonicalizer
+    0.6262 (  2.0%)    0.6262 (  2.4%)    Inliner
+    2.8983 (  9.1%)    2.8983 ( 11.2%)    IMConstProp
+    0.0429 (  0.1%)    0.0429 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0003 (  0.0%)    0.0003 (  0.0%)    BlackBoxReader
+    1.8399 (  5.8%)    0.9215 (  3.6%)    'firrtl.module' Pipeline
+    1.8369 (  5.8%)    0.9202 (  3.6%)      Canonicalizer
+    1.1626 (  3.7%)    1.1626 (  4.5%)  LowerFIRRTLToHW
+    0.2492 (  0.8%)    0.2492 (  1.0%)  HWMemSimImpl
+    2.7815 (  8.7%)    1.3909 (  5.4%)  'hw.module' Pipeline
+    0.0650 (  0.2%)    0.0352 (  0.1%)    HWCleanup
+    0.9060 (  2.8%)    0.4534 (  1.8%)    CSE
+    0.0015 (  0.0%)    0.0009 (  0.0%)      (A) DominanceInfo
+    1.7842 (  5.6%)    0.8967 (  3.5%)    Canonicalizer
+    0.0148 (  0.0%)    0.0081 (  0.0%)    HWLegalizeModules
+    0.4324 (  1.4%)    0.4324 (  1.7%)  HWLegalizeNames
+    0.4949 (  1.6%)    0.2477 (  1.0%)  'hw.module' Pipeline
+    0.4910 (  1.5%)    0.2459 (  1.0%)    PrettifyVerilog
+    7.7778 ( 24.5%)    7.7778 ( 30.1%)  Output
+    0.0081 (  0.0%)    0.0081 (  0.0%)  Rest
+   31.7945 (100.0%)   25.7973 (100.0%)  Total
+
+{
+  totalTime: 25.841,
+  maxMemory: 815411200
+}
