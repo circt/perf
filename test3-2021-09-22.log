@@ -1,0 +1,46 @@
+<unknown>:0: error: sv.alwaysff should be in a non-procedural region
+<unknown>:0: note: see current operation: "sv.alwaysff"(%arg13) ( {
+  "sv.passign"(%51, %arg14) : (!hw.inout<i1>, i1) -> ()
+},  {
+}) {clockEdge = 0 : i32, resetStyle = 0 : i32} : (i1) -> ()
+<unknown>:0: error: sv.alwaysff should be in a non-procedural region
+<unknown>:0: note: see current operation: "sv.alwaysff"(%arg13) ( {
+  "sv.passign"(%27, %arg14) : (!hw.inout<i1>, i1) -> ()
+},  {
+}) {clockEdge = 0 : i32, resetStyle = 0 : i32} : (i1) -> ()
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 29.0134 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+   11.8733 ( 30.5%)   11.8733 ( 40.9%)  FIR Parser
+   24.8177 ( 63.7%)   14.8891 ( 51.3%)  'firrtl.circuit' Pipeline
+    3.1426 (  8.1%)    1.7508 (  6.0%)    'firrtl.module' Pipeline
+    2.7623 (  7.1%)    1.5445 (  5.3%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.3802 (  1.0%)    0.2063 (  0.7%)      LowerCHIRRTL
+    0.2715 (  0.7%)    0.2715 (  0.9%)    InferWidths
+    1.3854 (  3.6%)    1.3854 (  4.8%)    InferResets
+    0.0698 (  0.2%)    0.0698 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.1526 (  0.4%)    0.1526 (  0.5%)    PrefixModules
+    0.0723 (  0.2%)    0.0723 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    1.7006 (  4.4%)    1.7006 (  5.9%)    LowerFIRRTLTypes
+   10.9059 ( 28.0%)    6.0413 ( 20.8%)    'firrtl.module' Pipeline
+    3.7049 (  9.5%)    2.0368 (  7.0%)      ExpandWhens
+    7.2010 ( 18.5%)    4.0045 ( 13.8%)      Canonicalizer
+    0.3267 (  0.8%)    0.3267 (  1.1%)    Inliner
+    1.1129 (  2.9%)    1.1129 (  3.8%)    IMConstProp
+    0.0386 (  0.1%)    0.0386 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    BlackBoxReader
+    3.7544 (  9.6%)    2.1365 (  7.4%)    'firrtl.module' Pipeline
+    3.7544 (  9.6%)    2.1365 (  7.4%)      Canonicalizer
+    1.7318 (  4.4%)    1.7318 (  6.0%)  LowerFIRRTLToHW
+    0.2824 (  0.7%)    0.2824 (  1.0%)  HWMemSimImpl
+    0.2367 (  0.6%)    0.2367 (  0.8%)  Rest
+   38.9420 (100.0%)   29.0134 (100.0%)  Total
+
+{
+  totalTime: 29.06,
+  maxMemory: 923455488
+}
