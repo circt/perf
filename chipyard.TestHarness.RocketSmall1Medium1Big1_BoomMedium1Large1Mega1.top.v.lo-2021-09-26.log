@@ -1,0 +1,47 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 20.7255 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    4.7590 ( 18.1%)    4.7590 ( 23.0%)  FIR Parser
+   12.1729 ( 46.4%)    8.5252 ( 41.1%)  'firrtl.circuit' Pipeline
+    0.7068 (  2.7%)    0.7068 (  3.4%)    EmitMetadata
+    2.2771 (  8.7%)    1.1391 (  5.5%)    'firrtl.module' Pipeline
+    2.0425 (  7.8%)    1.0238 (  4.9%)      CSE
+    0.0012 (  0.0%)    0.0007 (  0.0%)        (A) DominanceInfo
+    0.2295 (  0.9%)    0.1171 (  0.6%)      LowerCHIRRTL
+    0.1344 (  0.5%)    0.1344 (  0.6%)    InferWidths
+    0.8483 (  3.2%)    0.8483 (  4.1%)    InferResets
+    0.0463 (  0.2%)    0.0463 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0905 (  0.3%)    0.0905 (  0.4%)    PrefixModules
+    0.0452 (  0.2%)    0.0452 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.7471 (  2.8%)    0.7471 (  3.6%)    LowerFIRRTLTypes
+    3.3533 ( 12.8%)    1.6781 (  8.1%)    'firrtl.module' Pipeline
+    1.2695 (  4.8%)    0.6435 (  3.1%)      ExpandWhens
+    2.0786 (  7.9%)    1.0466 (  5.0%)      Canonicalizer
+    0.5682 (  2.2%)    0.5682 (  2.7%)    Inliner
+    1.7727 (  6.8%)    1.7727 (  8.6%)    IMConstProp
+    0.0410 (  0.2%)    0.0410 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0004 (  0.0%)    0.0004 (  0.0%)    BlackBoxReader
+    1.6598 (  6.3%)    0.8306 (  4.0%)    'firrtl.module' Pipeline
+    1.6566 (  6.3%)    0.8288 (  4.0%)      Canonicalizer
+    1.2884 (  4.9%)    1.2884 (  6.2%)  LowerFIRRTLToHW
+    0.3059 (  1.2%)    0.3059 (  1.5%)  HWMemSimImpl
+    3.1623 ( 12.0%)    1.5812 (  7.6%)  'hw.module' Pipeline
+    0.0840 (  0.3%)    0.0453 (  0.2%)    HWCleanup
+    1.0084 (  3.8%)    0.5109 (  2.5%)    CSE
+    0.0016 (  0.0%)    0.0008 (  0.0%)      (A) DominanceInfo
+    2.0382 (  7.8%)    1.0212 (  4.9%)    Canonicalizer
+    0.0203 (  0.1%)    0.0108 (  0.1%)    HWLegalizeModules
+    0.5429 (  2.1%)    0.5429 (  2.6%)  HWLegalizeNames
+    0.5824 (  2.2%)    0.2921 (  1.4%)  'hw.module' Pipeline
+    0.5784 (  2.2%)    0.2904 (  1.4%)    PrettifyVerilog
+    3.4202 ( 13.0%)    3.4202 ( 16.5%)  ExportVerilog emission
+    0.0058 (  0.0%)    0.0058 (  0.0%)  Rest
+   26.2448 (100.0%)   20.7255 (100.0%)  Total
+
+{
+  totalTime: 20.768,
+  maxMemory: 805773312
+}
