@@ -1,4 +1,6 @@
 {
   "errors": {},
-  "warnings": {}
+  "warnings": {
+    "WIDTH": 5
+  }
 }
