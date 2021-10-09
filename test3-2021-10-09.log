@@ -1,0 +1,43 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 29.7817 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    8.5147 ( 20.5%)    8.5147 ( 28.6%)  FIR Parser
+   22.8988 ( 55.1%)   13.6374 ( 45.8%)  'firrtl.circuit' Pipeline
+    2.6855 (  6.5%)    1.5660 (  5.3%)    'firrtl.module' Pipeline
+    2.4138 (  5.8%)    1.4108 (  4.7%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.2717 (  0.7%)    0.1551 (  0.5%)      LowerCHIRRTL
+    0.2847 (  0.7%)    0.2847 (  1.0%)    InferWidths
+    1.3365 (  3.2%)    1.3365 (  4.5%)    InferResets
+    0.0840 (  0.2%)    0.0840 (  0.3%)      (A) circt::firrtl::InstanceGraph
+    0.0925 (  0.2%)    0.0925 (  0.3%)    PrefixModules
+    1.2859 (  3.1%)    1.2859 (  4.3%)    LowerFIRRTLTypes
+    9.8536 ( 23.7%)    5.6594 ( 19.0%)    'firrtl.module' Pipeline
+    3.3006 (  7.9%)    1.8866 (  6.3%)      ExpandWhens
+    6.5530 ( 15.8%)    3.7728 ( 12.7%)      Canonicalizer
+    0.3354 (  0.8%)    0.3354 (  1.1%)    Inliner
+    1.0303 (  2.5%)    1.0303 (  3.5%)    IMConstProp
+    0.0416 (  0.1%)    0.0416 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    BlackBoxReader
+    3.4709 (  8.4%)    2.0360 (  6.8%)    'firrtl.module' Pipeline
+    3.4709 (  8.4%)    2.0360 (  6.8%)      Canonicalizer
+    1.6731 (  4.0%)    1.6731 (  5.6%)  LowerFIRRTLToHW
+    0.9213 (  2.2%)    0.9213 (  3.1%)  HWMemSimImpl
+    4.7451 ( 11.4%)    2.5217 (  8.5%)  'hw.module' Pipeline
+    0.1434 (  0.3%)    0.0735 (  0.2%)    HWCleanup
+    1.4747 (  3.5%)    0.8083 (  2.7%)    CSE
+    0.0085 (  0.0%)    0.0058 (  0.0%)      (A) DominanceInfo
+    1.8984 (  4.6%)    0.9669 (  3.2%)    Canonicalizer
+    0.0126 (  0.0%)    0.0070 (  0.0%)    HWLegalizeModules
+    1.1546 (  2.8%)    0.6414 (  2.2%)    PrettifyVerilog
+    2.4964 (  6.0%)    2.4964 (  8.4%)  ExportVerilog
+    0.0026 (  0.0%)    0.0026 (  0.0%)  Rest
+   41.5648 (100.0%)   29.7817 (100.0%)  Total
+
+{
+  totalTime: 29.826,
+  maxMemory: 1016446976
+}
