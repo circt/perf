@@ -1,0 +1,48 @@
+tage.scala:91:27: error: 'hw.instance' op operand type #0 must be 'i8', but got 'i7'
+tage.scala:91:27: note: see current operation: %263:4 = "hw.instance"(%27, %arg2, %arg0, %248, %arg0, %250, %252, %254, %256, %257, %258, %259, %260) {argNames = ["R0_addr", "R0_en", "R0_clk", "W0_addr", "W0_clk", "W0_data_0", "W0_data_1", "W0_data_2", "W0_data_3", "W0_mask_0", "W0_mask_1", "W0_mask_2", "W0_mask_3"], instanceName = "table_0", moduleName = @table_0_1, parameters = [], resultNames = ["R0_data_0", "R0_data_1", "R0_data_2", "R0_data_3"]} : (i7, i1, i1, i7, i1, i11, i11, i11, i11, i1, i1, i1, i1) -> (i11, i11, i11, i11)
+regress/chipyard.TestHarness.RocketSmall1Medium1Big1_BoomMedium1Large1Mega1.top.v.lo.fir:986:10: note: module declared here
+  module table_0 :
+         ^
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 21.0078 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    4.5807 ( 17.6%)    4.5807 ( 21.8%)  FIR Parser
+   11.1278 ( 42.6%)    7.5900 ( 36.1%)  'firrtl.circuit' Pipeline
+    2.1306 (  8.2%)    1.0663 (  5.1%)    'firrtl.module' Pipeline
+    1.9488 (  7.5%)    0.9822 (  4.7%)      CSE
+    0.0011 (  0.0%)    0.0007 (  0.0%)        (A) DominanceInfo
+    0.1768 (  0.7%)    0.0960 (  0.5%)      LowerCHIRRTL
+    0.1264 (  0.5%)    0.1264 (  0.6%)    InferWidths
+    0.8578 (  3.3%)    0.8578 (  4.1%)    InferResets
+    0.0435 (  0.2%)    0.0435 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0396 (  0.2%)    0.0396 (  0.2%)    PrefixModules
+    0.7302 (  2.8%)    0.7302 (  3.5%)    LowerFIRRTLTypes
+    3.3328 ( 12.8%)    1.6704 (  8.0%)    'firrtl.module' Pipeline
+    1.2750 (  4.9%)    0.6377 (  3.0%)      ExpandWhens
+    2.0531 (  7.9%)    1.0308 (  4.9%)      Canonicalizer
+    0.5663 (  2.2%)    0.5663 (  2.7%)    Inliner
+    1.7214 (  6.6%)    1.7214 (  8.2%)    IMConstProp
+    0.0408 (  0.2%)    0.0408 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0003 (  0.0%)    0.0003 (  0.0%)    BlackBoxReader
+    1.6056 (  6.2%)    0.8045 (  3.8%)    'firrtl.module' Pipeline
+    1.6030 (  6.1%)    0.8033 (  3.8%)      Canonicalizer
+    1.0858 (  4.2%)    1.0858 (  5.2%)  LowerFIRRTLToHW
+    0.2357 (  0.9%)    0.2357 (  1.1%)  HWMemSimImpl
+    3.0959 ( 11.9%)    1.5486 (  7.4%)  'hw.module' Pipeline
+    0.0592 (  0.2%)    0.0343 (  0.2%)    HWCleanup
+    0.8100 (  3.1%)    0.4061 (  1.9%)    CSE
+    0.0016 (  0.0%)    0.0008 (  0.0%)      (A) DominanceInfo
+    1.7865 (  6.8%)    0.9035 (  4.3%)    Canonicalizer
+    0.0137 (  0.1%)    0.0072 (  0.0%)    HWLegalizeModules
+    0.4128 (  1.6%)    0.2128 (  1.0%)    PrettifyVerilog
+    5.4750 ( 21.0%)    5.4750 ( 26.1%)  ExportVerilog
+    0.4885 (  1.9%)    0.4885 (  2.3%)  Rest
+   26.0942 (100.0%)   21.0078 (100.0%)  Total
+
+{
+  totalTime: 21.052,
+  maxMemory: 915173376
+}
