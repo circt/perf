@@ -1,0 +1,31 @@
+firtool: ../llvm/llvm/include/llvm/ADT/APInt.h:1462: uint64_t llvm::APInt::getZExtValue() const: Assertion `BitWidth && "zero width values not allowed"' failed.
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x63c83)[0x5586a48d5c83]
+firtool(+0x61a3e)[0x5586a48d3a3e]
+firtool(+0x6427f)[0x5586a48d627f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7fd6aecd73c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7fd6ae79b18b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7fd6ae77a859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7fd6ae77a729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7fd6ae78bf36]
+firtool(+0x3355c6)[0x5586a4ba75c6]
+firtool(+0x353a21)[0x5586a4bc5a21]
+firtool(+0x46b8b4)[0x5586a4cdd8b4]
+firtool(+0x4599f1)[0x5586a4ccb9f1]
+firtool(+0x4e75d5)[0x5586a4d595d5]
+firtool(+0x4e7c03)[0x5586a4d59c03]
+firtool(+0x4ec392)[0x5586a4d5e392]
+firtool(+0x4ec44d)[0x5586a4d5e44d]
+firtool(+0x50e36f)[0x5586a4d8036f]
+firtool(+0x50a8f7)[0x5586a4d7c8f7]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x1247f)[0x7fd6aecd447f]
+firtool(+0x50e101)[0x5586a4d80101]
+firtool(+0x50dbd3)[0x5586a4d7fbd3]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x9609)[0x7fd6aeccb609]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x43)[0x7fd6ae877293]
+
+{
+  totalTime: 9.727,
+  maxMemory: 793513984
+}
