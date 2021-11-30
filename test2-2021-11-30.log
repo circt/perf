@@ -1,0 +1,40 @@
+firtool: ../llvm/llvm/include/llvm/ADT/APInt.h:1462: uint64_t llvm::APInt::getZExtValue() const: Assertion `BitWidth && "zero width values not allowed"' failed.
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/test2.fir --lower-to-hw --imconstprop --mlir-timing --verilog -o=test2.v
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x63c83)[0x55dd63679c83]
+firtool(+0x61a3e)[0x55dd63677a3e]
+firtool(+0x6427f)[0x55dd6367a27f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f63e94d83c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f63e8f9c18b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f63e8f7b859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7f63e8f7b729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7f63e8f8cf36]
+firtool(+0x3355c6)[0x55dd6394b5c6]
+firtool(+0x353a21)[0x55dd63969a21]
+firtool(+0x46b7a4)[0x55dd63a817a4]
+firtool(+0x4598e1)[0x55dd63a6f8e1]
+firtool(+0x4e74c5)[0x55dd63afd4c5]
+firtool(+0x4e7af3)[0x55dd63afdaf3]
+firtool(+0x4ec282)[0x55dd63b02282]
+firtool(+0x4ebd1b)[0x55dd63b01d1b]
+firtool(+0x4e8944)[0x55dd63afe944]
+firtool(+0x4e75c4)[0x55dd63afd5c4]
+firtool(+0x4e7af3)[0x55dd63afdaf3]
+firtool(+0x4ec282)[0x55dd63b02282]
+firtool(+0x4ebd1b)[0x55dd63b01d1b]
+firtool(+0x4e8944)[0x55dd63afe944]
+firtool(+0x4e75c4)[0x55dd63afd5c4]
+firtool(+0x4e7af3)[0x55dd63afdaf3]
+firtool(+0x4e9699)[0x55dd63aff699]
+firtool(+0x2408a)[0x55dd6363a08a]
+firtool(+0x26192)[0x55dd6363c192]
+firtool(+0x21128)[0x55dd63637128]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f63e8f7d0b3]
+firtool(+0x2147e)[0x55dd6363747e]
+
+{
+  totalTime: 7.704,
+  maxMemory: 501227520
+}
