@@ -1,0 +1,34 @@
+firtool: /tmp/circt/llvm/llvm/include/llvm/Support/MathExtras.h:786: int64_t llvm::SignExtend64(uint64_t, unsigned int): Assertion `B > 0 && "Bit width can't be 0."' failed.
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x63113)[0x5590a2b1d113]
+firtool(+0x60ece)[0x5590a2b1aece]
+firtool(+0x6370f)[0x5590a2b1d70f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7efc078e63c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7efc073aa18b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7efc07389859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7efc07389729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7efc0739af36]
+firtool(+0x703b7)[0x5590a2b2a3b7]
+firtool(+0x707c3)[0x5590a2b2a7c3]
+firtool(+0x332a65)[0x5590a2deca65]
+firtool(+0x332d6d)[0x5590a2decd6d]
+firtool(+0x33934f)[0x5590a2df334f]
+firtool(+0x311a91)[0x5590a2dcba91]
+firtool(+0x2cac2d)[0x5590a2d84c2d]
+firtool(+0x457374)[0x5590a2f11374]
+firtool(+0x456b7d)[0x5590a2f10b7d]
+firtool(+0x44b8d6)[0x5590a2f058d6]
+firtool(+0x4ea672)[0x5590a2fa4672]
+firtool(+0x4eac84)[0x5590a2fa4c84]
+firtool(+0x4ef458)[0x5590a2fa9458]
+firtool(+0x4ef50d)[0x5590a2fa950d]
+firtool(+0x7bf82)[0x5590a2b35f82]
+firtool(+0x5101d8)[0x5590a2fca1d8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x9609)[0x7efc078da609]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x43)[0x7efc07486293]
+
+{
+  totalTime: 0.945,
+  maxMemory: 62996480
+}

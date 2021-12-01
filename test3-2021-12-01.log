@@ -1,0 +1,43 @@
+firtool: /tmp/circt/llvm/llvm/lib/Support/APInt.cpp:953: llvm::APInt llvm::APInt::zext(unsigned int) const: Assertion `width > BitWidth && "Invalid APInt ZeroExtend request"' failed.
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/test3.fir --lower-to-hw --imconstprop --mlir-timing --verilog -o=test3.v
+1.	Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x63113)[0x558d82bdf113]
+firtool(+0x60ece)[0x558d82bdcece]
+firtool(+0x6370f)[0x558d82bdf70f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7fe2bc63f3c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7fe2bc10318b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7fe2bc0e2859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7fe2bc0e2729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7fe2bc0f3f36]
+firtool(+0x704c7)[0x558d82bec4c7]
+firtool(+0x338b83)[0x558d82eb4b83]
+firtool(+0x310ff1)[0x558d82e8cff1]
+firtool(+0x2cac2d)[0x558d82e46c2d]
+firtool(+0x457374)[0x558d82fd3374]
+firtool(+0x456b7d)[0x558d82fd2b7d]
+firtool(+0x44b8d6)[0x558d82fc78d6]
+firtool(+0x4ea672)[0x558d83066672]
+firtool(+0x4eac84)[0x558d83066c84]
+firtool(+0x4ef458)[0x558d8306b458]
+firtool(+0x4ef192)[0x558d8306b192]
+firtool(+0x4eba44)[0x558d83067a44]
+firtool(+0x4ea773)[0x558d83066773]
+firtool(+0x4eac84)[0x558d83066c84]
+firtool(+0x4ef458)[0x558d8306b458]
+firtool(+0x4eef1b)[0x558d8306af1b]
+firtool(+0x4eba44)[0x558d83067a44]
+firtool(+0x4ea773)[0x558d83066773]
+firtool(+0x4eac84)[0x558d83066c84]
+firtool(+0x4ec789)[0x558d83068789]
+firtool(+0x2330a)[0x558d82b9f30a]
+firtool(+0x25412)[0x558d82ba1412]
+firtool(+0x203a8)[0x558d82b9c3a8]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7fe2bc0e40b3]
+firtool(+0x206fe)[0x558d82b9c6fe]
+
+{
+  totalTime: 13.098,
+  maxMemory: 913469440
+}

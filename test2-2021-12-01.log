@@ -1,0 +1,46 @@
+firtool: /tmp/circt/llvm/llvm/include/llvm/Support/MathExtras.h:786: int64_t llvm::SignExtend64(uint64_t, unsigned int): Assertion `B > 0 && "Bit width can't be 0."' failed.
+PLEASE submit a bug report to https://bugs.llvm.org/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/test2.fir --lower-to-hw --imconstprop --mlir-timing --verilog -o=test2.v
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool(+0x63113)[0x5600e1e43113]
+firtool(+0x60ece)[0x5600e1e40ece]
+firtool(+0x6370f)[0x5600e1e4370f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7f90e6b083c0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f90e65cc18b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f90e65ab859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x25729)[0x7f90e65ab729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36f36)[0x7f90e65bcf36]
+firtool(+0x703b7)[0x5600e1e503b7]
+firtool(+0x707c3)[0x5600e1e507c3]
+firtool(+0x332a65)[0x5600e2112a65]
+firtool(+0x332d9b)[0x5600e2112d9b]
+firtool(+0x33a3a9)[0x5600e211a3a9]
+firtool(+0x310171)[0x5600e20f0171]
+firtool(+0x2cac2d)[0x5600e20aac2d]
+firtool(+0x457374)[0x5600e2237374]
+firtool(+0x456b7d)[0x5600e2236b7d]
+firtool(+0x44b8d6)[0x5600e222b8d6]
+firtool(+0x4ea672)[0x5600e22ca672]
+firtool(+0x4eac84)[0x5600e22cac84]
+firtool(+0x4ef458)[0x5600e22cf458]
+firtool(+0x4eef1b)[0x5600e22cef1b]
+firtool(+0x4eba44)[0x5600e22cba44]
+firtool(+0x4ea773)[0x5600e22ca773]
+firtool(+0x4eac84)[0x5600e22cac84]
+firtool(+0x4ef458)[0x5600e22cf458]
+firtool(+0x4eef1b)[0x5600e22cef1b]
+firtool(+0x4eba44)[0x5600e22cba44]
+firtool(+0x4ea773)[0x5600e22ca773]
+firtool(+0x4eac84)[0x5600e22cac84]
+firtool(+0x4ec789)[0x5600e22cc789]
+firtool(+0x2330a)[0x5600e1e0330a]
+firtool(+0x25412)[0x5600e1e05412]
+firtool(+0x203a8)[0x5600e1e003a8]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f90e65ad0b3]
+firtool(+0x206fe)[0x5600e1e006fe]
+
+{
+  totalTime: 8.579,
+  maxMemory: 500310016
+}
