@@ -1,0 +1,41 @@
+regress/test3.fir:25711:13: error: type mismatch between destination '!firrtl.sint<15>' and source '!firrtl.uint<15>'
+    tmp1679 <= mux(head(UInt<15>(2833), 1), SInt<15>(-14632), inp_h.inp_i.inp_o.inp_pe.inp_ej.inp_gk)
+            ^
+regress/test3.fir:25711:13: note: see current operation: "firrtl.connect"(%arg851, %37) : (!firrtl.sint<15>, !firrtl.uint<15>) -> ()
+regress/test3.fir:173209:14: error: type mismatch between destination '!firrtl.sint<47>' and source '!firrtl.uint<47>'
+    _tmp3233 <= sub(inp_c.inp_d.inp_ab.inp_fb[1][4][2].inp_dc.inp_ad.inp_ij, inp_bc.inp_fd.inp_pd[3][1][4].inp_nh)
+             ^
+regress/test3.fir:173209:14: note: see current operation: "firrtl.connect"(%4043, %55) : (!firrtl.sint<47>, !firrtl.uint<47>) -> ()
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 18.5148 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    5.0549 ( 19.0%)    5.0549 ( 27.3%)  FIR Parser
+   21.1152 ( 79.4%)   13.0355 ( 70.4%)  'firrtl.circuit' Pipeline
+    3.0295 ( 11.4%)    1.6876 (  9.1%)    'firrtl.module' Pipeline
+    2.7046 ( 10.2%)    1.5135 (  8.2%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.3248 (  1.2%)    0.1741 (  0.9%)      LowerCHIRRTL
+    0.2859 (  1.1%)    0.2859 (  1.5%)    InferWidths
+    1.4253 (  5.4%)    1.4253 (  7.7%)    InferResets
+    0.0764 (  0.3%)    0.0764 (  0.4%)      (A) circt::firrtl::InstanceGraph
+    0.0866 (  0.3%)    0.0866 (  0.5%)    PrefixModules
+    1.8014 (  6.8%)    1.8014 (  9.7%)    LowerFIRRTLTypes
+   10.9097 ( 41.0%)    5.9979 ( 32.4%)    'firrtl.module' Pipeline
+    3.7330 ( 14.0%)    2.0264 ( 10.9%)      ExpandWhens
+    7.1766 ( 27.0%)    3.9715 ( 21.5%)      Canonicalizer
+    0.2944 (  1.1%)    0.2944 (  1.6%)    Inliner
+    1.0523 (  4.0%)    1.0523 (  5.7%)    IMConstProp
+    0.0410 (  0.2%)    0.0410 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    BlackBoxReader
+    0.7949 (  3.0%)    0.4008 (  2.2%)    'firrtl.module' Pipeline
+    0.6992 (  2.6%)    0.4002 (  2.2%)      Canonicalizer
+    0.4243 (  1.6%)    0.4243 (  2.3%)  Rest
+   26.5945 (100.0%)   18.5148 (100.0%)  Total
+
+{
+  totalTime: 18.556,
+  maxMemory: 911450112
+}
