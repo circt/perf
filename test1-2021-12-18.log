@@ -1,7 +1,0 @@
-firtool: Unknown command line argument '--lower-to-hw'.  Try: 'firtool --help'
-firtool: Did you mean '--lower-types'?
-
-{
-  totalTime: 0.013,
-  maxMemory: 0
-}
