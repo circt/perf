@@ -1,0 +1,53 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 32.8566 seconds
+
+  ----Wall Time----  ----Name----
+    3.7964 ( 11.6%)  FIR Parser
+   17.0095 ( 51.8%)  'firrtl.circuit' Pipeline
+    1.2934 (  3.9%)    'firrtl.module' Pipeline
+    1.1557 (  3.5%)      CSE
+    0.0000 (  0.0%)        (A) DominanceInfo
+    0.1378 (  0.4%)      LowerCHIRRTLPass
+    0.1174 (  0.4%)    InferWidths
+    0.7591 (  2.3%)    InferResets
+    0.0258 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0869 (  0.3%)    WireDFT
+    0.0926 (  0.3%)    PrefixModules
+    0.0000 (  0.0%)      (A) circt::firrtl::NLATable
+    0.7680 (  2.3%)    LowerFIRRTLTypes
+    6.8992 ( 21.0%)    'firrtl.module' Pipeline
+    0.7954 (  2.4%)      ExpandWhens
+    0.0282 (  0.1%)      RemoveResets
+    5.6429 ( 17.2%)      Canonicalizer
+    0.4326 (  1.3%)      InferReadWrite
+    0.6184 (  1.9%)    Inliner
+    1.1266 (  3.4%)    IMConstProp
+    0.0369 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0338 (  0.1%)    BlackBoxReader
+    0.0337 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    4.3217 ( 13.2%)    'firrtl.module' Pipeline
+    4.3217 ( 13.2%)      Canonicalizer
+    0.4416 (  1.3%)    RemoveUnusedPorts
+    0.0333 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.4505 (  1.4%)    CreateSiFiveMetadata
+    0.0000 (  0.0%)    EmitOMIR
+    3.7023 ( 11.3%)  LowerFIRRTLToHW
+    0.0354 (  0.1%)    (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)  HWMemSimImpl
+    4.7560 ( 14.5%)  'hw.module' Pipeline
+    0.8927 (  2.7%)    CSE
+    0.0000 (  0.0%)      (A) DominanceInfo
+    2.3463 (  7.1%)    Canonicalizer
+    0.6774 (  2.1%)    HWCleanup
+    0.0763 (  0.2%)    HWLegalizeModules
+    0.7632 (  2.3%)    PrettifyVerilog
+    3.5893 ( 10.9%)  ExportVerilog
+    0.0021 (  0.0%)  Rest
+   32.8566 (100.0%)  Total
+
+{
+  totalTime: 32.885,
+  maxMemory: 697323520
+}
