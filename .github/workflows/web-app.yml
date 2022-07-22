@@ -23,8 +23,7 @@ jobs:
         npm i
         npm run build
     - name: publish pages 🚀
-      uses: JamesIves/github-pages-deploy-action@4.0.0
+      uses: JamesIves/github-pages-deploy-action@v4.4.0
       with:
-        branch: gh-pages
         folder: docs
         clean: false
