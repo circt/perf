@@ -1,0 +1,76 @@
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 34.7880 seconds
+
+  ----Wall Time----  ----Name----
+    5.0276 ( 14.5%)  FIR Parser
+    0.0000 (  0.0%)    Parse annotations
+    0.0000 (  0.0%)    Parse OMIR
+    4.2066 ( 12.1%)    Parse modules
+    0.7901 (  2.3%)    Verify circuit
+   27.3752 ( 78.7%)  'firrtl.circuit' Pipeline
+    0.7606 (  2.2%)    LowerFIRRTLAnnotations
+    2.6938 (  7.7%)    'firrtl.module' Pipeline
+    0.9223 (  2.7%)      DropName
+    1.7715 (  5.1%)      CSE
+    0.0000 (  0.0%)        (A) DominanceInfo
+    0.0000 (  0.0%)    InjectDUTHierarchy
+    0.1008 (  0.3%)    'firrtl.module' Pipeline
+    0.1008 (  0.3%)      LowerCHIRRTLPass
+    0.1343 (  0.4%)    InferWidths
+    0.7696 (  2.2%)    MemToRegOfVec
+    1.0389 (  3.0%)    InferResets
+    0.0592 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0983 (  0.3%)    WireDFT
+    0.9666 (  2.8%)    LowerFIRRTLTypes
+    1.0864 (  3.1%)    'firrtl.module' Pipeline
+    1.0471 (  3.0%)      ExpandWhens
+    0.0393 (  0.1%)      SFCCompat
+    0.5690 (  1.6%)    CheckCombCycles
+    0.0594 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    8.4217 ( 24.2%)    'firrtl.module' Pipeline
+    7.8928 ( 22.7%)      Canonicalizer
+    0.5289 (  1.5%)      InferReadWrite
+    0.2107 (  0.6%)    PrefixModules
+    0.0819 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)      (A) circt::firrtl::NLATable
+    0.7705 (  2.2%)    Inliner
+    1.6532 (  4.8%)    IMConstProp
+    0.0813 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0855 (  0.2%)    AddSeqMemPorts
+    0.0854 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.5348 (  1.5%)    CreateSiFiveMetadata
+    0.0410 (  0.1%)    ExtractInstances
+    0.0000 (  0.0%)      (A) circt::firrtl::NLATable
+    0.0000 (  0.0%)    BlackBoxReader
+    6.0272 ( 17.3%)    'firrtl.module' Pipeline
+    0.4322 (  1.2%)      DropName
+    5.5950 ( 16.1%)      Canonicalizer
+    0.7311 (  2.1%)    IMDeadCodeElim
+    0.0762 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    EmitOMIR
+    0.7385 (  2.1%)  LowerFIRRTLToHW
+    0.0325 (  0.1%)    (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    (A) circt::firrtl::NLATable
+    0.1938 (  0.6%)  LowerSeqToSV
+    0.0000 (  0.0%)  HWMemSimImpl
+    0.7593 (  2.2%)  'hw.module' Pipeline
+    0.1905 (  0.5%)    CSE
+    0.0000 (  0.0%)      (A) DominanceInfo
+    0.3235 (  0.9%)    Canonicalizer
+    0.1679 (  0.5%)    CSE
+    0.0000 (  0.0%)      (A) DominanceInfo
+    0.0773 (  0.2%)    HWCleanup
+    0.1023 (  0.3%)  'hw.module' Pipeline
+    0.0069 (  0.0%)    HWLegalizeModules
+    0.0955 (  0.3%)    PrettifyVerilog
+    0.0846 (  0.2%)  StripDebugInfoWithPred
+    0.4796 (  1.4%)  ExportVerilog
+    0.0032 (  0.0%)  Rest
+   34.7880 (100.0%)  Total
+
+{
+  totalTime: 34.815,
+  maxMemory: 541208576
+}
