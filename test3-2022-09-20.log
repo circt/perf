@@ -1,0 +1,32 @@
+corrupted double-linked list (not small)
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool[0x456553]
+firtool[0x4543fe]
+firtool[0x456b7f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x14420)[0x7f9cca662420]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f9cca0f500b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f9cca0d4859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x8d26e)[0x7f9cca13f26e]
+/lib/x86_64-linux-gnu/libc.so.6(+0x952fc)[0x7f9cca1472fc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x95977)[0x7f9cca147977]
+/lib/x86_64-linux-gnu/libc.so.6(+0x985f3)[0x7f9cca14a5f3]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_malloc+0x1b9)[0x7f9cca14c299]
+/lib/x86_64-linux-gnu/libstdc++.so.6(_ZnwmSt11align_val_t+0x46)[0x7f9cca369bf6]
+firtool[0x977b80]
+firtool[0x973ea3]
+firtool[0x9600a9]
+firtool[0x95ea13]
+firtool[0xa3c3bf]
+firtool[0xa3ca39]
+firtool[0xa41c8f]
+firtool[0x4970bc]
+firtool[0xa6a182]
+firtool[0xa6ad33]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x8609)[0x7f9cca656609]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x43)[0x7f9cca1d1133]
+
+{
+  totalTime: 35.645,
+  maxMemory: 1056608256
+}

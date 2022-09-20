@@ -1,0 +1,42 @@
+firtool: /tmp/circt/llvm/llvm/include/llvm/ADT/ilist_iterator.h:138: llvm::ilist_iterator::reference llvm::ilist_iterator<llvm::ilist_detail::node_options<mlir::Block, true, false, void>, false, false>::operator*() const [OptionsT = llvm::ilist_detail::node_options<mlir::Block, true, false, void>, IsReverse = false, IsConst = false]: Assertion `!NodePtr->isKnownSentinel()' failed.
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool[0x456553]
+firtool[0x4543fe]
+firtool[0x456b7f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x14420)[0x7fa160b6c420]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7fa1605ff00b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7fa1605de859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x22729)[0x7fa1605de729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x33fd6)[0x7fa1605effd6]
+firtool[0x70c52d]
+firtool[0x7074bc]
+firtool[0x6f147c]
+firtool[0x6f80c7]
+firtool[0x74b0e6]
+firtool[0x76fa91]
+firtool[0x76f4e1]
+firtool[0x896a4b]
+firtool[0x89697e]
+firtool[0x8968fc]
+firtool[0x7890a3]
+firtool[0x78928b]
+firtool[0x78928b]
+firtool[0x78928b]
+firtool[0x78928b]
+firtool[0x78928b]
+firtool[0x78928b]
+firtool[0x788e5c]
+firtool[0xa3c52f]
+firtool[0xa3ca39]
+firtool[0xa41c8f]
+firtool[0x4970bc]
+firtool[0xa6a182]
+firtool[0xa6ad33]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x8609)[0x7fa160b60609]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x43)[0x7fa1606db133]
+
+{
+  totalTime: 19.504,
+  maxMemory: 830730240
+}
