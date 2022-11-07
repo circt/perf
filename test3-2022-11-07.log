@@ -1,0 +1,29 @@
+firtool: /tmp/circt/lib/Dialect/FIRRTL/FIRRTLOps.cpp:1879: circt::firrtl::FIRRTLBaseType circt::firrtl::MemOp::getDataType(): Assertion `getNumResults() != 0 && "Mems with no read/write ports are illegal"' failed.
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool[0x458aa3]
+firtool[0x45694e]
+firtool[0x4590cf]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x14420)[0x7f16b035d420]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f16afdf000b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f16afdcf859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x22729)[0x7f16afdcf729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x33fd6)[0x7f16afde0fd6]
+firtool[0x85a458]
+firtool[0x836ca3]
+firtool[0x8393e2]
+firtool[0x9def42]
+firtool[0x9c99c1]
+firtool[0xaa77bf]
+firtool[0xaa7e39]
+firtool[0xaad08f]
+firtool[0x49a44c]
+firtool[0xad5702]
+firtool[0xad62b3]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x8609)[0x7f16b0351609]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x43)[0x7f16afecc133]
+
+{
+  totalTime: 23.035,
+  maxMemory: 930127872
+}
