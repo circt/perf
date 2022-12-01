@@ -1,0 +1,36 @@
+firtool: /tmp/circt/llvm/llvm/include/llvm/ADT/APSInt.h:129: llvm::APSInt llvm::APSInt::operator%(const llvm::APSInt &) const: Assertion `IsUnsigned == RHS.IsUnsigned && "Signedness mismatch!"' failed.
+PLEASE submit a bug report to https://github.com/llvm/circt and include the crash backtrace.
+Stack dump:
+0.	Program arguments: firtool regress/test2.fir --mlir-timing --verilog -o=test2.v
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+firtool[0x459d73]
+firtool[0x457c1e]
+firtool[0x45a39f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x14420)[0x7f9b0b149420]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7f9b0abdc00b]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7f9b0abbb859]
+/lib/x86_64-linux-gnu/libc.so.6(+0x22729)[0x7f9b0abbb729]
+/lib/x86_64-linux-gnu/libc.so.6(+0x33fd6)[0x7f9b0abccfd6]
+firtool[0x85fe0f]
+firtool[0x83925e]
+firtool[0x83a0e8]
+firtool[0x8328a3]
+firtool[0x7b943e]
+firtool[0x5c4ed6]
+firtool[0xad654f]
+firtool[0xad6bc9]
+firtool[0xad8568]
+firtool[0xad6646]
+firtool[0xad6bc9]
+firtool[0xad93b5]
+firtool[0x415763]
+firtool[0x41362e]
+firtool[0x40f629]
+firtool[0x40e47e]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f9b0abbd083]
+firtool[0x40c1ce]
+
+{
+  totalTime: 17.161,
+  maxMemory: 596402176
+}
