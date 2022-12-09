@@ -1,0 +1,54 @@
+regress/test3.fir:166372:5: error: firrtl.constant attribute has wrong sign
+    wire _tmp3120: UInt<15>
+    ^
+regress/test3.fir:166372:5: note: see current operation: %8 = "firrtl.constant"() {value = -12133 : si15} : () -> !firrtl.uint<15>
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 23.3617 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    3.9184 (  9.4%)    3.9184 ( 16.8%)  FIR Parser
+    0.0000 (  0.0%)    0.0000 (  0.0%)    Parse annotations
+    0.0000 (  0.0%)    0.0000 (  0.0%)    Parse OMIR
+    3.1178 (  7.5%)    3.1178 ( 13.3%)    Parse modules
+    0.7516 (  1.8%)    0.7516 (  3.2%)    Verify circuit
+   37.5920 ( 90.1%)   19.2275 ( 82.3%)  'firrtl.circuit' Pipeline
+    0.7432 (  1.8%)    0.7432 (  3.2%)    LowerFIRRTLAnnotations
+    3.6164 (  8.7%)    1.9433 (  8.3%)    'firrtl.module' Pipeline
+    1.1058 (  2.7%)    0.5939 (  2.5%)      DropName
+    2.5105 (  6.0%)    1.3494 (  5.8%)      CSE
+    0.0000 (  0.0%)    0.0000 (  0.0%)        (A) DominanceInfo
+    0.0000 (  0.0%)    0.0000 (  0.0%)    InjectDUTHierarchy
+    0.1336 (  0.3%)    0.0730 (  0.3%)    'firrtl.module' Pipeline
+    0.1336 (  0.3%)    0.0730 (  0.3%)      LowerCHIRRTLPass
+    0.2327 (  0.6%)    0.2327 (  1.0%)    InferWidths
+    0.7171 (  1.7%)    0.7171 (  3.1%)    MemToRegOfVec
+    1.1832 (  2.8%)    1.1832 (  5.1%)    InferResets
+    0.1383 (  0.3%)    0.1383 (  0.6%)      (A) circt::firrtl::InstanceGraph
+    0.1912 (  0.5%)    0.1912 (  0.8%)    WireDFT
+    1.0531 (  2.5%)    0.5738 (  2.5%)    'firrtl.module' Pipeline
+    1.0531 (  2.5%)    0.5738 (  2.5%)      FlattenMemory
+    1.5178 (  3.6%)    1.5178 (  6.5%)    LowerFIRRTLTypes
+    5.0503 ( 12.1%)    2.7541 ( 11.8%)    'firrtl.module' Pipeline
+    3.9825 (  9.5%)    2.1470 (  9.2%)      ExpandWhens
+    1.0666 (  2.6%)    0.6066 (  2.6%)      SFCCompat
+    1.4829 (  3.6%)    1.4829 (  6.3%)    Inliner
+    1.2521 (  3.0%)    0.6861 (  2.9%)    'firrtl.module' Pipeline
+    1.2520 (  3.0%)    0.6861 (  2.9%)      RandomizeRegisterInit
+    1.1226 (  2.7%)    1.1226 (  4.8%)    CheckCombCycles
+    0.2441 (  0.6%)    0.2441 (  1.0%)      (A) circt::firrtl::InstanceGraph
+    7.2591 ( 17.4%)    3.9845 ( 17.1%)    'firrtl.module' Pipeline
+    6.9682 ( 16.7%)    3.8158 ( 16.3%)      Canonicalizer
+    0.2909 (  0.7%)    0.1687 (  0.7%)      InferReadWrite
+    0.1377 (  0.3%)    0.1377 (  0.6%)    PrefixModules
+    0.0557 (  0.1%)    0.0557 (  0.2%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) circt::firrtl::NLATable
+    0.5042 (  1.2%)    0.5042 (  2.2%)    IMConstProp
+    0.2158 (  0.5%)    0.2158 (  0.9%)  Rest
+   41.7263 (100.0%)   23.3617 (100.0%)  Total
+
+{
+  totalTime: 23.406,
+  maxMemory: 1069502464
+}
