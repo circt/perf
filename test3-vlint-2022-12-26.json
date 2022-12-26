@@ -1,0 +1,10 @@
+{
+  "errors": {
+    "IF": 4,
+    "LTE": 2,
+    "don't know how to deal with tristate logic in the conditional expression": 6,
+    "SHIFTRS": 1,
+    "SUB": 1
+  },
+  "warnings": {}
+}
