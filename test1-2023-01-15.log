@@ -1,0 +1,23 @@
+regress/test1.fir:7247:15: error: use of unknown declaration 'validif'
+    tmp499 <= validif(head(inp_a.inp_c.inp_j.inp_gc.inp_gkb.inp_flb.inp_fic, 1), SInt<13>("h-b9c"))
+              ^
+regress/test1.fir:28262:15: error: use of unknown declaration 'validif'
+    tmp550 <= validif(tail(asUInt(SInt<22>("h-3089")), 21), tmp548)
+              ^
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0825 seconds
+
+  ----Wall Time----  ----Name----
+    0.0816 ( 98.8%)  FIR Parser
+    0.0000 (  0.0%)    Parse annotations
+    0.0000 (  0.0%)    Parse OMIR
+    0.0749 ( 90.7%)    Parse modules
+    0.0010 (  1.2%)  Rest
+    0.0825 (100.0%)  Total
+
+{
+  totalTime: 0.095,
+  maxMemory: 0
+}
