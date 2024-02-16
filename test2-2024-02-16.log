@@ -1,0 +1,20 @@
+regress/test2.fir:247424:17: error: use of unknown declaration 'validif'
+    tmp20070 <= validif(head(UInt<3>(6), 1), SInt<24>("b-11111101000010001010101"))
+                ^
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.9257 seconds
+
+  ----Wall Time----  ----Name----
+    0.9238 ( 99.8%)  FIR Parser
+    0.0000 (  0.0%)    Parse annotations
+    0.0000 (  0.0%)    Parse OMIR
+    0.8712 ( 94.1%)    Parse modules
+    0.0019 (  0.2%)  Rest
+    0.9257 (100.0%)  Total
+
+{
+  totalTime: 0.941,
+  maxMemory: 162516992
+}
