@@ -13,17 +13,17 @@ regress/test3.fir:847311:15: error: use of unknown declaration 'validif'
 ===-------------------------------------------------------------------------===
                          ... Execution time report ...
 ===-------------------------------------------------------------------------===
-  Total Execution Time: 0.4221 seconds
+  Total Execution Time: 0.4118 seconds
 
   ----Wall Time----  ----Name----
-    0.4197 ( 99.4%)  FIR Parser
+    0.4095 ( 99.4%)  FIR Parser
     0.0000 (  0.0%)    Parse annotations
     0.0000 (  0.0%)    Parse OMIR
-    0.3803 ( 90.1%)    Parse modules
-    0.0024 (  0.6%)  Rest
-    0.4221 (100.0%)  Total
+    0.3747 ( 91.0%)    Parse modules
+    0.0023 (  0.6%)  Rest
+    0.4118 (100.0%)  Total
 
 {
-  totalTime: 0.433,
-  maxMemory: 133369856
+  totalTime: 0.421,
+  maxMemory: 135282688
 }
