@@ -1,9 +1,9 @@
 name: Perf charts
 # Run on request and every day at 0500 PDT
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: 0 13 * * *
+on: [push]
+#  workflow_dispatch:
+#  schedule:
+#    - cron: 0 13 * * *
 
 jobs:
   firtool-perf:
